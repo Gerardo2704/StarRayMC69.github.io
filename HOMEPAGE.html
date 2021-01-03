@@ -1,0 +1,2375 @@
+ <!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Clarence's Big Project</title>
+	<meta name="description" content="Clarence's Big Project">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+
+	<!-- STYLESHEETS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/all.min.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/slick.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/animate.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/plyr.css" />
+    
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/jquery.visible.min.js">
+            (function($) {
+
+/**
+ * Copyright 2012, Digital Fusion
+ * Licensed under the MIT license.
+ * http://teamdf.com/jquery-plugins/license/
+ *
+ * @author Sam Sehnert
+ * @desc A small plugin that checks whether elements are within
+ *     the user visible viewport of a web browser.
+ *     only accounts for vertical position, not horizontal.
+ */
+
+$.fn.visible = function(partial) {
+  
+	var $t            = $(this),
+		$w            = $(window),
+		viewTop       = $w.scrollTop(),
+		viewBottom    = viewTop + $w.height(),
+		_top          = $t.offset().top,
+		_bottom       = _top + $t.height(),
+		compareTop    = partial === true ? _bottom : _top,
+		compareBottom = partial === true ? _top : _bottom;
+  
+  return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+
+};
+  
+})(jQuery);
+
+var win = $(window);
+
+var allMods = $(".portfolio-wrapper");
+
+allMods.each(function(i, el) {
+var el = $(el);
+if (el.visible(true)) {
+  el.addClass("already-visible"); 
+} 
+});
+
+win.scroll(function(event) {
+
+allMods.each(function(i, el) {
+  var el = $(el);
+  if (el.visible(true)) {
+	el.addClass("come-in"); 
+  } 
+});
+
+});
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+            function changeCss () {
+  		var bodyElement = document.querySelector("body");
+		  var navElement = document.getElementById("top-bar");
+		  
+		  this.scrollY < 550 ? navElement.style.opacity = "1" : navElement.style.boxShadow = "-7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9, 7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001, inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001, inset 0px 0px 0px 0px #fff9, inset 0px 0px 0px 0px #0001";
+		  
+                this.scrollY > 550 ? navElement.classList.add("float-down") : navElement.style.overflow = "visible";
+
+				this.scrollY < 10 ? navElement.classList.add("float-up2") : navElement.style.overflow = "visible";
+				
+				this.scrollY > 575 ? navElement.style.opacity = "1" : navElement.style.boxShadow = "-7px -7px 20px #00000000";
+				this.scrollY > 10 ? navElement.style.backgroundColor = "rgb(224, 229, 236)" : navElement.style.boxShadow = "-7px -7px 20px #00000000";
+				this.scrollY < 10 ? navElement.style.backgroundColor = "rgb(224, 229, 236)" : navElement.style.boxShadow = "#fffff00";
+/*#e0e5ec*/
+}
+
+
+ 
+window.addEventListener("scroll", changeCss , false);
+            
+            
+	</script>
+<script>
+	var $prehashval = "";
+function loop()
+{
+if (location.hash.slice(1)!=$prehashval)
+	hashChanged();
+
+$prehashval = location.hash.slice(1);
+setTimeout("loop()", 100);
+}
+function hashChanged()
+{
+var $output;
+switch (location.hash.slice(1))
+{
+	case "about":
+		document.getElementById('about').style.display = "block";
+		document.getElementById('ap-wrapper').style.display = "none";
+		document.getElementById('en-wrapper').style.display = "none";
+		document.getElementById('fil-wrapper').style.display = "none";
+		document.getElementById('mec-wrapper').style.display = "none";
+		document.getElementById('mapeh-wrapper').style.display = "none";
+		document.getElementById('sci-wrapper').style.display = "none";
+		document.getElementById('math-wrapper').style.display = "none";
+		document.getElementById('ar-wrapper').style.display = "none";
+		document.getElementById('tle-wrapper').style.display = "none";
+		document.getElementById('ap-wrapper').style.display = "none";
+
+		document.getElementById('works').style.display = "block";
+
+		document.getElementById('homelink').classList.add("active");
+		document.getElementById('aplink').classList.remove("active");
+		document.getElementById('enlink').classList.remove("active");
+		document.getElementById('fillink').classList.remove("active");
+		document.getElementById('meclink').classList.remove("active");
+		document.getElementById('mapehlink').classList.remove("active");
+		document.getElementById('scilink').classList.remove("active");
+		document.getElementById('mathlink').classList.remove("active");
+		document.getElementById('arlink').classList.remove("active");
+		document.getElementById('tlelink').classList.remove("active");
+		break;
+	case "ap-wrapper":
+		document.getElementById('about').style.display = "none";
+		document.getElementById('ap-wrapper').style.display = "block";
+		document.getElementById('en-wrapper').style.display = "none";
+		document.getElementById('fil-wrapper').style.display = "none";
+		document.getElementById('mec-wrapper').style.display = "none";
+		document.getElementById('mapeh-wrapper').style.display = "none";
+		document.getElementById('sci-wrapper').style.display = "none";
+		document.getElementById('math-wrapper').style.display = "none";
+		document.getElementById('ar-wrapper').style.display = "none";
+		document.getElementById('tle-wrapper').style.display = "none";
+		
+		document.getElementById('works').style.display = "none";
+
+		document.getElementById('homelink').classList.remove("active");
+		document.getElementById('aplink').classList.add("active");
+		document.getElementById('enlink').classList.remove("active");
+		document.getElementById('fillink').classList.remove("active");
+		document.getElementById('meclink').classList.remove("active");
+		document.getElementById('mapehlink').classList.remove("active");
+		document.getElementById('scilink').classList.remove("active");
+		document.getElementById('mathlink').classList.remove("active");
+		document.getElementById('arlink').classList.remove("active");
+		document.getElementById('tlelink').classList.remove("active");
+		break;
+	case "en-wrapper":
+		document.getElementById('about').style.display = "none";
+		document.getElementById('ap-wrapper').style.display = "none";
+		document.getElementById('en-wrapper').style.display = "block";
+		document.getElementById('fil-wrapper').style.display = "none";
+		document.getElementById('mec-wrapper').style.display = "none";
+		document.getElementById('mapeh-wrapper').style.display = "none";
+		document.getElementById('sci-wrapper').style.display = "none";
+		document.getElementById('math-wrapper').style.display = "none";
+		document.getElementById('ar-wrapper').style.display = "none";
+		document.getElementById('tle-wrapper').style.display = "none";
+		
+		document.getElementById('works').style.display = "none";
+
+		document.getElementById('homelink').classList.remove("active");
+		document.getElementById('aplink').classList.remove("active");
+		document.getElementById('enlink').classList.add("active");
+		document.getElementById('fillink').classList.remove("active");
+		document.getElementById('meclink').classList.remove("active");
+		document.getElementById('mapehlink').classList.remove("active");
+		document.getElementById('scilink').classList.remove("active");
+		document.getElementById('mathlink').classList.remove("active");
+		document.getElementById('arlink').classList.remove("active");
+		document.getElementById('tlelink').classList.remove("active");
+		break;
+	case "fil-wrapper":
+		document.getElementById('about').style.display = "none";
+		document.getElementById('ap-wrapper').style.display = "none";
+		document.getElementById('en-wrapper').style.display = "none";
+		document.getElementById('fil-wrapper').style.display = "block";
+		document.getElementById('mec-wrapper').style.display = "none";
+		document.getElementById('mapeh-wrapper').style.display = "none";
+		document.getElementById('sci-wrapper').style.display = "none";
+		document.getElementById('math-wrapper').style.display = "none";
+		document.getElementById('ar-wrapper').style.display = "none";
+		document.getElementById('tle-wrapper').style.display = "none";
+		
+		document.getElementById('works').style.display = "none";
+
+		document.getElementById('homelink').classList.remove("active");
+		document.getElementById('aplink').classList.remove("active");
+		document.getElementById('enlink').classList.remove("active");
+		document.getElementById('fillink').classList.add("active");
+		document.getElementById('meclink').classList.remove("active");
+		document.getElementById('mapehlink').classList.remove("active");
+		document.getElementById('scilink').classList.remove("active");
+		document.getElementById('mathlink').classList.remove("active");
+		document.getElementById('arlink').classList.remove("active");
+		document.getElementById('tlelink').classList.remove("active");
+		break;
+	case "mec-wrapper":
+		document.getElementById('about').style.display = "none";
+		document.getElementById('ap-wrapper').style.display = "none";
+		document.getElementById('en-wrapper').style.display = "none";
+		document.getElementById('fil-wrapper').style.display = "none";
+		document.getElementById('mec-wrapper').style.display = "block";
+		document.getElementById('mapeh-wrapper').style.display = "none";
+		document.getElementById('sci-wrapper').style.display = "none";
+		document.getElementById('math-wrapper').style.display = "none";
+		document.getElementById('ar-wrapper').style.display = "none";
+		document.getElementById('tle-wrapper').style.display = "none";
+		
+		document.getElementById('works').style.display = "none";
+
+		document.getElementById('homelink').classList.remove("active");
+		document.getElementById('aplink').classList.remove("active");
+		document.getElementById('enlink').classList.remove("active");
+		document.getElementById('fillink').classList.remove("active");
+		document.getElementById('meclink').classList.add("active");
+		document.getElementById('mapehlink').classList.remove("active");
+		document.getElementById('scilink').classList.remove("active");
+		document.getElementById('mathlink').classList.remove("active");
+		document.getElementById('arlink').classList.remove("active");
+		document.getElementById('tlelink').classList.remove("active");
+		break;
+	case "mapeh-wrapper":
+		document.getElementById('about').style.display = "none";
+		document.getElementById('ap-wrapper').style.display = "none";
+		document.getElementById('en-wrapper').style.display = "none";
+		document.getElementById('fil-wrapper').style.display = "none";
+		document.getElementById('mec-wrapper').style.display = "none";
+		document.getElementById('mapeh-wrapper').style.display = "block";
+		document.getElementById('sci-wrapper').style.display = "none";
+		document.getElementById('math-wrapper').style.display = "none";
+		document.getElementById('ar-wrapper').style.display = "none";
+		document.getElementById('tle-wrapper').style.display = "none";
+		
+		document.getElementById('works').style.display = "none";
+
+		document.getElementById('homelink').classList.remove("active");
+		document.getElementById('aplink').classList.remove("active");
+		document.getElementById('enlink').classList.remove("active");
+		document.getElementById('fillink').classList.remove("active");
+		document.getElementById('meclink').classList.remove("active");
+		document.getElementById('mapehlink').classList.add("active");
+		document.getElementById('scilink').classList.remove("active");
+		document.getElementById('mathlink').classList.remove("active");
+		document.getElementById('arlink').classList.remove("active");
+		document.getElementById('tlelink').classList.remove("active");
+		break;
+	case "sci-wrapper":
+		document.getElementById('about').style.display = "none";
+		document.getElementById('ap-wrapper').style.display = "none";
+		document.getElementById('en-wrapper').style.display = "none";
+		document.getElementById('fil-wrapper').style.display = "none";
+		document.getElementById('mec-wrapper').style.display = "none";
+		document.getElementById('mapeh-wrapper').style.display = "none";
+		document.getElementById('sci-wrapper').style.display = "block";
+		document.getElementById('math-wrapper').style.display = "none";
+		document.getElementById('ar-wrapper').style.display = "none";
+		document.getElementById('tle-wrapper').style.display = "none";
+		
+		document.getElementById('works').style.display = "none";
+
+		document.getElementById('homelink').classList.remove("active");
+		document.getElementById('aplink').classList.remove("active");
+		document.getElementById('enlink').classList.remove("active");
+		document.getElementById('fillink').classList.remove("active");
+		document.getElementById('meclink').classList.remove("active");
+		document.getElementById('mapehlink').classList.remove("active");
+		document.getElementById('scilink').classList.add("active");
+		document.getElementById('mathlink').classList.remove("active");
+		document.getElementById('arlink').classList.remove("active");
+		document.getElementById('tlelink').classList.remove("active");
+		break;
+	case "math-wrapper":
+		document.getElementById('about').style.display = "none";
+		document.getElementById('ap-wrapper').style.display = "none";
+		document.getElementById('en-wrapper').style.display = "none";
+		document.getElementById('fil-wrapper').style.display = "none";
+		document.getElementById('mec-wrapper').style.display = "none";
+		document.getElementById('mapeh-wrapper').style.display = "none";
+		document.getElementById('sci-wrapper').style.display = "none";
+		document.getElementById('math-wrapper').style.display = "block";
+		document.getElementById('ar-wrapper').style.display = "none";
+		document.getElementById('tle-wrapper').style.display = "none";
+		
+		document.getElementById('works').style.display = "none";
+
+		document.getElementById('homelink').classList.remove("active");
+		document.getElementById('aplink').classList.remove("active");
+		document.getElementById('enlink').classList.remove("active");
+		document.getElementById('fillink').classList.remove("active");
+		document.getElementById('meclink').classList.remove("active");
+		document.getElementById('mapehlink').classList.remove("active");
+		document.getElementById('scilink').classList.remove("active");
+		document.getElementById('mathlink').classList.add("active");
+		document.getElementById('arlink').classList.remove("active");
+		document.getElementById('tlelink').classList.remove("active");
+		break;
+	case "ar-wrapper":
+		document.getElementById('about').style.display = "none";
+		document.getElementById('ap-wrapper').style.display = "none";
+		document.getElementById('en-wrapper').style.display = "none";
+		document.getElementById('fil-wrapper').style.display = "none";
+		document.getElementById('mec-wrapper').style.display = "none";
+		document.getElementById('mapeh-wrapper').style.display = "none";
+		document.getElementById('sci-wrapper').style.display = "none";
+		document.getElementById('math-wrapper').style.display = "none";
+		document.getElementById('ar-wrapper').style.display = "block";
+		document.getElementById('tle-wrapper').style.display = "none";
+		
+		document.getElementById('works').style.display = "none";
+
+		document.getElementById('homelink').classList.remove("active");
+		document.getElementById('aplink').classList.remove("active");
+		document.getElementById('enlink').classList.remove("active");
+		document.getElementById('fillink').classList.remove("active");
+		document.getElementById('meclink').classList.remove("active");
+		document.getElementById('mapehlink').classList.remove("active");
+		document.getElementById('scilink').classList.remove("active");
+		document.getElementById('mathlink').classList.remove("active");
+		document.getElementById('arlink').classList.add("active");
+		document.getElementById('tlelink').classList.remove("active");
+		break;
+	case "tle-wrapper":
+		document.getElementById('about').style.display = "none";
+		document.getElementById('ap-wrapper').style.display = "none";
+		document.getElementById('en-wrapper').style.display = "none";
+		document.getElementById('fil-wrapper').style.display = "none";
+		document.getElementById('mec-wrapper').style.display = "none";
+		document.getElementById('mapeh-wrapper').style.display = "none";
+		document.getElementById('sci-wrapper').style.display = "none";
+		document.getElementById('math-wrapper').style.display = "none";
+		document.getElementById('ar-wrapper').style.display = "none";
+		document.getElementById('tle-wrapper').style.display = "block";
+		
+		document.getElementById('works').style.display = "none";
+
+		document.getElementById('homelink').classList.remove("active");
+		document.getElementById('aplink').classList.remove("active");
+		document.getElementById('enlink').classList.remove("active");
+		document.getElementById('fillink').classList.remove("active");
+		document.getElementById('meclink').classList.remove("active");
+		document.getElementById('mapehlink').classList.remove("active");
+		document.getElementById('scilink').classList.remove("active");
+		document.getElementById('mathlink').classList.remove("active");
+		document.getElementById('arlink').classList.remove("active");
+		document.getElementById('tlelink').classList.add("active");
+		break;
+	default:
+		$output = location.hash.slice(1);
+}
+}
+loop();
+</script>
+</head>
+
+<body>
+<!-- TO DO:
+	- Current Events translation
+	- UAE SS activity 1
+	- inspirational quotes
+-->
+<!-- Preloader -->
+<div id="preloader" class="light">
+	<div class="outer">
+		<!-- Google Chrome -->
+		<div class="infinityChrome">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+
+		<!-- Safari and others -->
+		<div class="infinity">
+			<div>
+				<span></span>
+			</div>
+			<div>
+				<span></span>
+			</div>
+			<div>
+				<span></span>
+			</div>
+		</div>
+		<!-- Stuff -->
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="goo-outer">
+			<defs>
+				<filter id="goo">
+					<feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+					<feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+					<feBlend in="SourceGraphic" in2="goo" />
+				</filter>
+			</defs>
+		</svg>
+	</div>
+</div>
+
+<!-- mobile header -->
+<header class="mobile-header-1 light" >
+	<div class="container">
+		<!-- menu icon -->
+        <div id="top-bar">
+		<div class="menu-icon d-inline-flex ">
+			<button class="menu-btn">
+				<span class="db"></span>
+			</button>
+		</div>
+        </div>
+	</div>
+</header>
+
+<!-- desktop header -->
+<header class="desktop-header-1 light d-flex align-items-start flex-column">
+	<div class="container">
+		<!-- menu icon -->
+		<div class="menu-icon d-inline-flex">
+			<button class="menu-btn">
+				<span class="db"></span>
+			</button>
+		</div>
+		<!-- logo image -->
+		<div class="site-logo">
+			<span class="mt">MENU</span>
+        </div>
+	</div>
+</header>
+<header class="desktop-header-1 light d-flex align-items-start flex-column">
+	
+	<!-- menu text -->
+		<span class="mt">MENU</span>
+        
+    <hr class="mnhr">
+	
+	<!-- main menu -->
+	<nav>
+		<ul class="vertical-menu scrollspy">
+			<li><a href="index.html#about" id="homelink">Home</a></li>
+			<li><a href="index.html#ap-wrapper" id="aplink">Araling Panlipunan</a></li>
+			<li><a href="index.html#en-wrapper" id="enlink">English</a></li>
+			<li><a href="index.html#fil-wrapper"id="fillink">Filipino</a></li>
+			<li><a href="index.html#mec-wrapper"id="meclink">MEC</a></li>
+
+			<li><a href="index.html#mapeh-wrapper" id="mapehlink">MAPEH</a></li>
+			<li><a href="index.html#sci-wrapper"id="scilink">Science</a></li>
+			<li><a href="index.html#math-wrapper" id="mathlink">Math</a></li>
+			<li><a href="index.html#ar-wrapper"  id="arlink">Arabic</a></li>
+			<li><a href="index.html#tle-wrapper"  id="tlelink">TLE</a></li>
+
+		</ul>
+	</nav>
+	
+	<!-- site footer -->
+
+</header>
+
+<!-- main layout -->
+
+<main class="content">
+    <div class="overlay">
+    </div>
+        <div class="con-sl">
+            <div class="slider">
+                
+                <div class="slide slide1">
+                </div>
+                
+                <div class="slide slide2">
+                </div>
+                
+                <div class="slide slide3">
+                </div>
+                
+                <div class="slide slide4">
+                </div>
+                
+                <div class="slide slide5">
+                </div>
+                
+                <div class="slide slide6">
+                </div>
+                
+                <div class="slide slide7">
+                </div>
+                
+                <div class="slide slide8">
+                </div>
+                
+                <div class="slide slide9">
+                </div>
+                
+            </div>
+        </div>
+	<!-- section home -->
+	<section id="home" class="home d-flex light align-items-center">
+		<div class="container">
+          
+			<!-- intro -->
+			<div class="intro">
+
+				<!-- avatar image -->
+				<img src="images/avatar-1.svg" alt="Bolby" class="mb-4" />
+
+				<!-- info -->
+				<h1 class="mb-2 mt-0">Clarence Pagaduan</h1>
+				<span>I'm <span class="text-rotating"> a Grade 8 student from 8C!, an aspiring programmer </span></span>
+
+				<!-- buttons -->
+				<div class="mt-4">
+					<a href="#about" class="btn btn-default">Continue</a>
+				</div>
+			</div>
+			<!-- scroll down mouse wheel -->
+			<div class="scroll-down light">
+				<a href="#about" class="mouse-wrapper">
+					<span>Scroll Down</span>
+					<span class="mouse">
+						<span class="wheel"></span>
+					</span>
+				</a>
+			</div>
+            </div>
+        
+			<!-- parallax layers (copied) -->
+			<div class="parallax" data-relative-input="true">
+                <div>
+				<svg width="27" height="29" data-depth="0.3" class="layer p1" xmlns="http://www.w3.org/2000/svg"><path d="M21.15625.60099c4.37954 3.67487 6.46544 9.40612 5.47254 15.03526-.9929 5.62915-4.91339 10.30141-10.2846 12.25672-5.37122 1.9553-11.3776.89631-15.75715-2.77856l2.05692-2.45134c3.50315 2.93948 8.3087 3.78663 12.60572 2.22284 4.297-1.5638 7.43381-5.30209 8.22768-9.80537.79387-4.50328-.8749-9.08872-4.37803-12.02821L21.15625.60099z" fill="#FFD15C" fill-rule="evenodd"/></svg>
+
+				<svg width="26" height="26" data-depth="0.2" class="layer p2" xmlns="http://www.w3.org/2000/svg"><path d="M13 3.3541L2.42705 24.5h21.1459L13 3.3541z" stroke="#FF4C60" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+
+				<svg width="30" height="25" data-depth="0.3" class="layer p3" xmlns="http://www.w3.org/2000/svg"><path d="M.1436 8.9282C3.00213 3.97706 8.2841.92763 14.00013.92796c5.71605.00032 10.9981 3.04992 13.85641 8 2.8583 4.95007 2.8584 11.0491-.00014 16.00024l-2.77128-1.6c2.28651-3.96036 2.28631-8.84002.00011-12.8002-2.2862-3.96017-6.5124-6.40017-11.08513-6.4-4.57271.00018-8.79872 2.43984-11.08524 6.4002l-2.77128-1.6z" fill="#44D7B6" fill-rule="evenodd"/></svg>
+
+				<svg width="15" height="23" data-depth="0.6" class="layer p4" xmlns="http://www.w3.org/2000/svg"><rect transform="rotate(30 9.86603 10.13397)" x="7" width="3" height="25" rx="1.5" fill="#FFD15C" fill-rule="evenodd"/></svg>
+
+				<svg width="15" height="23" data-depth="0.2" class="layer p5" xmlns="http://www.w3.org/2000/svg"><rect transform="rotate(30 9.86603 10.13397)" x="7" width="3" height="25" rx="1.5" fill="#6C6CE5" fill-rule="evenodd"/></svg>
+
+				<svg width="49" height="17" data-depth="0.5" class="layer p6" xmlns="http://www.w3.org/2000/svg"><g fill="#FF4C60" fill-rule="evenodd"><path d="M.5 16.5c0-5.71709 2.3825-10.99895 6.25-13.8567 3.8675-2.85774 8.6325-2.85774 12.5 0C23.1175 5.50106 25.5 10.78292 25.5 16.5H23c0-4.57303-1.90625-8.79884-5-11.08535-3.09375-2.28652-6.90625-2.28652-10 0C4.90625 7.70116 3 11.92697 3 16.5H.5z"/><path d="M23.5 16.5c0-5.71709 2.3825-10.99895 6.25-13.8567 3.8675-2.85774 8.6325-2.85774 12.5 0C46.1175 5.50106 48.5 10.78292 48.5 16.5H46c0-4.57303-1.90625-8.79884-5-11.08535-3.09375-2.28652-6.90625-2.28652-10 0-3.09375 2.28651-5 6.51232-5 11.08535h-2.5z"/></g></svg>
+                
+				<svg width="26" height="26" data-depth="0.4" class="layer p7" xmlns="http://www.w3.org/2000/svg"><path d="M13 22.6459L2.42705 1.5h21.1459L13 22.6459z" stroke="#FFD15C" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+
+				<svg width="19" height="21" data-depth="0.3" class="layer p8" xmlns="http://www.w3.org/2000/svg"><rect transform="rotate(-40 6.25252 10.12626)" x="7" width="3" height="25" rx="1.5" fill="#6C6CE5" fill-rule="evenodd"/></svg>
+
+				<svg width="30" height="25" data-depth="0.3" data-depth-y="-1.30" class="layer p9" xmlns="http://www.w3.org/2000/svg"><path d="M29.8564 16.0718c-2.85854 4.95114-8.1405 8.00057-13.85654 8.00024-5.71605-.00032-10.9981-3.04992-13.85641-8-2.8583-4.95007-2.8584-11.0491.00014-16.00024l2.77128 1.6c-2.28651 3.96036-2.28631 8.84002-.00011 12.8002 2.2862 3.96017 6.5124 6.40017 11.08513 6.4 4.57271-.00018 8.79872-2.43984 11.08524-6.4002l2.77128 1.6z" fill="#6C6CE5" fill-rule="evenodd"/></svg>
+
+				<svg width="47" height="29" data-depth="0.2" class="layer p10" xmlns="http://www.w3.org/2000/svg"><g fill="#44D7B6" fill-rule="evenodd"><path d="M46.78878 17.19094c-1.95535 5.3723-6.00068 9.52077-10.61234 10.8834-4.61167 1.36265-9.0893-.26708-11.74616-4.27524-2.65686-4.00817-3.08917-9.78636-1.13381-15.15866l2.34923.85505c-1.56407 4.29724-1.2181 8.92018.90705 12.12693 2.12514 3.20674 5.70772 4.5107 9.39692 3.4202 3.68921-1.0905 6.92581-4.40949 8.48988-8.70673l2.34923.85505z"/><path d="M25.17585 9.32448c-1.95535 5.3723-6.00068 9.52077-10.61234 10.8834-4.61167 1.36264-9.0893-.26708-11.74616-4.27525C.16049 11.92447-.27182 6.14628 1.68354.77398l2.34923.85505c-1.56407 4.29724-1.2181 8.92018.90705 12.12692 2.12514 3.20675 5.70772 4.5107 9.39692 3.4202 3.68921-1.0905 6.92581-4.40948 8.48988-8.70672l2.34923.85505z"/></g></svg>
+
+				<svg width="33" height="20" data-depth="0.5" class="layer p11" xmlns="http://www.w3.org/2000/svg"><path d="M32.36774.34317c.99276 5.63023-1.09332 11.3614-5.47227 15.03536-4.37895 3.67396-10.3855 4.73307-15.75693 2.77837C5.76711 16.2022 1.84665 11.53014.8539 5.8999l3.15139-.55567c.7941 4.50356 3.93083 8.24147 8.22772 9.8056 4.29688 1.56413 9.10275.71673 12.60554-2.2227C28.34133 9.98771 30.01045 5.4024 29.21635.89884l3.15139-.55567z" fill="#FFD15C" fill-rule="evenodd"/></svg>
+
+			</div>
+		</div>
+
+
+	</section>
+
+	<!-- section about -->
+	<section id="about">
+
+		<div class="container">
+			
+			<!-- section title -->
+			<h2 class="section-title wow fadeInUp">About Me</h2>
+
+			<div class="spacer" data-height="60"></div>
+			
+			<div class="row">
+
+				<div class="col-md-3">
+					<div class="text-center text-md-left">
+						<!-- avatar image -->
+						<img src="images/avatar-2.svg" alt="Bolby" />
+					</div>
+					<div class="spacer d-md-none d-lg-none" data-height="30"></div>
+				</div>
+
+				<div class="col-md-9 triangle-left-md triangle-top-sm">
+					<div class="rounded bg-white shadow-dark padding-30">
+						<div class="row">
+							<div class="">
+								<!-- about text -->
+								<p>I am Clarence S. Pagaduan, a second-year highschool student from The Philippine School - Muhaisnah, Dubai. I have medium experience in using HTML and CSS, and I want to use this big project as an opportunity to improve and showcase my skills in web design.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- row end -->
+
+			<div class="spacer" data-height="70"></div>
+			
+			
+
+		</div>
+		
+	</section>
+	
+	
+	<!-- section works -->
+	<section id="works">
+
+		<div class="container">
+			
+			<!-- section title -->
+			<h2 class="section-title wow fadeInUp">Subjects</h2>
+
+			<div class="spacer" data-height="60"></div>		
+				<!-- portolio wrapper -->
+			<div class="row portfolio-wrapper">
+				
+				<!-- portfolio item -->
+				<div class="col-md-4 col-sm-6 grid-item art pi">
+					<a href="index.html#ap-wrapper">
+						<div class="portfolio-item rounded shadow-dark">
+							<div class="details">
+								
+								<h4 class="title">Araling<br>Panlipunan</h4>
+								<span class="more-button"><i class="icon-options"></i></span>
+							</div>
+							<div class="thumb">
+								<img src="images/cards/ap.svg" alt="Portfolio-title" />
+								<div class="mask"></div>
+							</div>
+						</div>
+					</a>
+				</div>
+				
+				<!-- portfolio item -->
+				<div class="col-md-4 col-sm-6 grid-item art pi">
+					<a href="index.html#en-wrapper">
+						<div class="portfolio-item rounded shadow-dark">
+							<div class="details">
+								
+								<h4 class="title">English</h4>
+								<span class="more-button"><i class="icon-options"></i></span>
+							</div>
+							<div class="thumb">
+								<img src="images/cards/en.svg" alt="Portfolio-title" />
+								<div class="mask"></div>
+							</div>
+						</div>
+					</a>
+				</div>
+				
+				<!-- portfolio item -->
+				<div class="col-md-4 col-sm-6 grid-item art pi">
+					<a href="index.html#fil-wrapper">
+						<div class="portfolio-item rounded shadow-dark">
+							<div class="details">
+								
+								<h4 class="title">Filipino</h4>
+								<span class="more-button"><i class="icon-options"></i></span>
+							</div>
+							<div class="thumb">
+								<img src="images/cards/fil.svg" alt="Portfolio-title" />
+								<div class="mask"></div>
+							</div>
+						</div>
+					</a>
+				</div>
+				
+				<!-- portfolio item -->
+				<div class="col-md-4 col-sm-6 grid-item art pi">
+					<a href="index.html#mec-wrapper">
+						<div class="portfolio-item rounded shadow-dark">
+							<div class="details">
+								
+								<h4 class="title">Moral<br>Education</h4>
+								<span class="more-button"><i class="icon-options"></i></span>
+							</div>
+							<div class="thumb">
+								<img src="images/cards/mec.svg" alt="Portfolio-title" />
+								<div class="mask"></div>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- portfolio item -->
+				<div class="col-md-4 col-sm-6 grid-item creative design pi">
+					<a href="index.html#mapeh-wrapper">
+						<div class="portfolio-item rounded shadow-dark">
+							<div class="details">
+								
+								<h4 class="title">MAPEH</h4>
+								<span class="more-button"><i class="icon-options"></i></span>
+							</div>
+							<div class="thumb">
+								<img src="images/cards/pe.svg" alt="Portfolio-title" />
+								<div class="mask"></div>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- portfolio item -->
+				<div class="col-md-4 col-sm-6 grid-item branding pi">
+					<a href="index.html#scie-wrapper">
+						<div class="portfolio-item rounded shadow-dark">
+							<div class="details">
+								
+								<h4 class="title">Science</h4>
+								<span class="more-button"><i class="icon-options"></i></span>
+							</div>
+							<div class="thumb">
+								<img src="images/cards/science.svg" alt="Portfolio-title" />
+								<div class="mask"></div>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- portfolio item -->
+				<div class="col-md-4 col-sm-6 grid-item creative pi">
+					<a href="index.html#math-wrapper">
+						<div class="portfolio-item rounded shadow-dark">
+							<div class="details">
+								
+								<h4 class="title">Math</h4>
+								<span class="more-button"><i class="icon-options"></i></span>
+							</div>
+							<div class="thumb">
+								<img src="images/cards/math.svg" alt="Portfolio-title" />
+								<div class="mask"></div>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- portfolio item -->
+				<div class="col-md-4 col-sm-6 grid-item art branding pi">
+					<a href="index.html#ar-wrapper">
+						<div class="portfolio-item rounded shadow-dark">
+							<div class="details">
+								
+								<h4 class="title">Arabic</h4>
+								<span class="more-button"><i class="icon-options"></i></span>
+							</div>
+							<div class="thumb">
+								<img src="images/cards/ar.svg" alt="Portfolio-title" />
+								<div class="mask"></div>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- portfolio item -->
+				<div class="col-md-4 col-sm-6 grid-item creative design pi">
+					<a href="index.html#tle-wrapper">
+						<div class="portfolio-item rounded shadow-dark">
+							<div class="details">
+								
+								<h4 class="title">Technology & Livelihood Education</h4>
+								<span class="more-button"><i class="icon-options"></i></span>
+							</div>
+							<div class="thumb">
+								<img src="images/cards/tle.svg" alt="Portfolio-title" />
+								<div class="mask"></div>
+							</div>
+						</div>
+					</a>
+				</div>
+
+
+			</div>
+			<script src="js/vanilla-tilt.min.js"></script>
+			<script>
+				VanillaTilt.init(document.querySelectorAll(".pi"), {
+			max: 25,
+			speed: 400
+		});
+			</script>
+			<!-- more button -->
+
+		</div>
+
+	</section>
+
+	<!-- section content-->
+	<section id="content">
+		
+		<div class="container">
+			
+			<div id="ap-wrapper" style="display: none;">
+				<!-- section title -->
+				<h2 class="section-title wow fadeInUp" id="ap">Araling Panlipunan</h2>
+
+				<div class="spacer" data-height="30"></div>
+
+				<!-- contents wrapper -->
+				<div class="content-wrapper">
+				
+					<!-- content item -->
+					<div class="c-i">
+						<div class="text">
+							<h2>Minoan</h2>
+							Ang unang sibilisasyon ng bansang Gresya ay lumitaw sa isla  ng Crete sa pagitan ng 3000 at 2000 b.c. Ang sibilisasyong ito ay tinawag na Minoan sa karangalan ni haring Minos na sinasabing naghari noon doon.Sa Knossos, ang kabisera ng Crete, natagpuan ng mga arkeologo ang magarang palasyong Minoan nang maghukay sila noong 1900.
+							<br>
+							<h2>Mycenean</h2>
+							Ang Mycenaeans ay ang mga taong nakikipaglaban. Hindi lamang sila nakikipaglaban upang ipagtanggol ang kanilang sarili at sakupin ang bagong lupain, nasiyahan din sila sa pakikipaglaban. Dahil sa kanilang likas na parang digmaan, mahalaga para sa kanila na magtayo ng mga nagtatanggol na istraktura.
+							<br>
+							<hr>
+							<br>
+							<h2>Pagkakaiba ng Kabihasnang Minoan at Mycenean</h2>
+							<table class="tg" >
+								<thead>
+								  <tr>
+									<th class="tbt tg-c3ow" ><h4>Minoan</h4></th>
+									<th class="tbt tg-c3ow"><h4>Mycenean</h4></th>
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<td class="tg-c3ow">Unang sumibol sa isla ng crete.</td>
+									<td class="tg-c3ow">Pinakaunang sibilisasyon sa pangunahing lupain sa greece.</td>
+								  </tr>
+								  <tr>
+									<td class="tg-c3ow">Sikat sa mga nakamamanghang palasyo na kanilang itinayo, higit sa lahat sa Knossos.</td>
+									<td class="tg-c3ow">Kilala sa paggawa ng mga ibat ibang alahas at palamuti.</td>
+								  </tr>
+								  <tr>
+									<td class="tg-c3ow">Ito ay may pinakamataas na antas ng kaunlaran at kultura sa europa.</td>
+									<td class="tg-c3ow">Mycenae na "mayaman sa ginto."</td>
+								  </tr>
+								  <tr>
+									<td class="tg-c3ow">Ang kabihasnang Minoan ay ang kauna unahang umusbong na kabihasnan sa Greece sa pulo ng Crete.</td>
+									<td class="tg-c3ow">Ang mga mycenaean naman ay pangalawa at sila ang sumakop / tumalo sa kabihasnang Minoan.</td>
+								  </tr>
+								</tbody>
+							</table>
+							<hr>
+							<hr>
+							<img src="./images/AP venn Diagram.png" class="image"></img>
+							<hr>
+							<h2>Labanan ng Salamis (Battle of Salamis)</h2>
+							Ang Labanan ng Salamis ay isang labanan sa dagat na nakipaglaban sa pagitan ng isang alyansa ng mga lungsod ng Greece na estado sa ilalim ng Themistocles, at ang Imperyo ng Persia sa ilalim ng Haring Xerxes noong 480 BC. Nagresulta ito sa isang tagumpay para sa mas maraming mga Griyego.
+							<div class="spacer" data-height="20"></div>
+											<!-- timeline wrapper -->
+											<div class="timeline edu bg-white rounded shadow-dark padding-30 overflow-hidden">
+						
+												<!-- timeline item -->
+												<div class="timeline-container wow fadeInUp">
+													<div class="content">
+														<span class="time">September 27-28, 480</span>
+														<h3 class="title">Pagsimula ng Labanan</h3>
+														<p>Dinala ni Xerxes ang naval fleets niya papuntang Salamis upang kalabanin ang mga naval fleets ni Heneral Themistocles</p>
+													</div>
+												</div>
+						
+												<!-- timeline item -->
+												<div class="timeline-container wow fadeInUp" data-wow-delay="0.2s">
+													<div class="content">
+														<span class="time">September 28-29, 480</span>
+														<h3 class="title">Gitna ng labanan</h3>
+														<p>Hinabol ng mga Persian ang mga Atheniang fleet hanggang makaabot sila sa isang maliit at narrow na strait. Pagkadating ng strait, nadesorganisado ang mga fleet ng mga Perian, at biglaang bumaliktad ang direksyon ng hangin patungo sa mga barko ng mga Persian. Ang mga fleet ng mga Athenian ay napabilis dahil dito at patuloy na umatake sa harapan at sa gilid ng mga fleet ng Persian.</p>
+													</div>
+												</div>
+						
+												<!-- timeline item -->
+												<div class="timeline-container wow fadeInUp" data-wow-delay="0.4s">
+													<div class="content">
+														<span class="time">September 29, 480</span>
+														<h3 class="title">Pagkatalo ng mga Persian</h3>
+														<p>Pagkatapos ng labanan na ito, higit 300 na Persian fleets ang nasira, at ilang daan nalang ang natira. Napilitan na umatras ang mga Persian, at dito nagwakas ang Labanan ng Salamis.</p>
+													</div>
+												</div>
+						
+												<!-- main line -->
+												<span class="line"></span>
+						
+											</div>
+							<hr>
+							<h2>Peloponnesian War</h2>
+							Ang Peloponnesian War ay isang giyera na nangyari sa pagitan ng Athens at Sparta - ang dalawang pinakamakapangyarihang lungsod-estado sa sinaunang Greece noong panahong iyon (431 hanggang 405 B.C.E.). Ang digmaang ito ay naging dahilan kung bakit nagbago ang lakas mula sa Athens patungong Sparta, na ginagawang pinakamakapangyarihang lungsod-estado sa rehiyon ang Sparta. Napilitan ang Athens na sumuko, at nagwagi si Sparta sa Peloponnesian War noong 404 BC. Mahinahon ang mga termino ng Spartans. Una, ang demokrasya ay pinalitan ng oligarkiya ng tatlumpung Ateniano, palakaibigan sa Sparta. Ang Delian League ay isinara, at ang Athens ay nabawasan sa isang limitasyong sampung triremes.
+							<br>
+							<div class="imgconcon">
+								<div class="imgContainer">
+									<img src="./images/ap1.png" class="image" id="apimg1">
+									<img src="./images/ap2.png" class="image" id="apimg2">
+								</div>
+							</div>
+							<br>
+							<hr>
+							<h2>Gawain 1: Arabic Word of the Day</h2>
+							<img src="./images/gw1.png">
+							<h2>Gawain 2: Balitaan</h2>
+								Pamagat ng Balita: Kaso ng COVID-19 sa Ilocos Norte Lumobo <br>
+								Pinagkuhanan: <a href="https://www.philstar.com/pilipino-star-ngayon/probinsiya/2020/11/29/2060263/kaso-ng-covid-19-sa-ilocos-norte-lumobo">https://www.philstar.com/</a><br>
+								Petsa: Nobyembre 29, 2020 <br><br>
+							
+								<b>Mahalagang Detalye sa 2 pangungusap.</b> <br>
+									<li>Lumubo ang bilang ng mga tinamaan ng COVID-19 sa Ilocos Norte matapos na makapagtala ng 51 na bagong kaso na karamihan ay mula sa kabisera ng Laoag City na nasa pangalawang araw pa lang ng pagkakasailalim sa Modified Enhanced Community Quarantine (MECQ) kahapon.<br><br></li>
+									<li>Sa kasalukuyan ay lumobo na sa 285 kaso ng COVID-19 ang naitala sa Ilocos Norte at 122 dito ang aktibo at mayroon nang dalawang nasawi.<br><br></li>
+								<b>Maglahad ng iyong sariling opinion ukol sa balitang nakalap.</b><br>
+							
+								Ako ay nalulungkot at hindi nagagalak dito sapagkat itong pandemya na ito ay lubos na nakakamatay at dapat natin gumawa ng aksyon para matapos na ang pandemyang ito, lalo na sa ating bansa.<br>
+							
+							<h2>Gawain 3: Kahulugan</h2>
+							<ol>
+								<li><b>Etruscan </b>- mga katutubong miyembro ng sinaunang tao ng Etruria, Italya.
+								</li>
+								<li><b>Republika </b>- ang salitang ito ay nagmula sa salitang “res publica” na nangangahulugang, “pampublikong kapakanan”.</li>
+								<li><b>Forum </b>- tinatawag din na Plaza, ang naging sentro ng buhay, pampulitika, panlipunan, at pangkomersyo ng mga Roma.</li>
+								<li><b>Patrician </b>- sila ay ang mga maharlika at nagmamayari ng mga malalaking lupain.</li>
+								<li><b>Plebian </b>- sila ay mga kabilang sa mga pamilyang huling nanirahan sa Rome, at mga karaniwang manggagawa.</li>
+								<li><b>Konsul </b>- sila ay mga kabilang sa mga pamilyang huling nanirahan sa Rome, at mga karaniwang manggagawa.</li>
+								<li><b>Senado </b>- sa pangkat na ito hinahalal ang mga konsul.</li>
+								<li><b>Diktador </b>- siya ang hinalal sa panahon ng krisis o digmaan, kaya niyang gumawa ng batas at pamunuan ang mga hukbong sandatahan.</li>
+								<li><b>Legion </b>- ito ang tinatawag sa malalaking pangkat ng hukbong sandatahan ng Rome.</li>
+								<li><b>Tribune </b>- sila ay ang mga kasapi sa isang asembleya na itinatag upang lutasin ang galit ng mga nagpoprotestang plebian.</li>
+								<li><b>12 tables </b>- ito ay mga batas na nakasulat sa labindalawang tableta.</li>
+							</ol>
+							<h2>Gawain 4: Paano nagsimula ang Roma?</h2>
+							<b>Maraming mga teorya na nag-aambag sa ideya kung paano itinatag ang Roma, ito ang ilan lamang sa mga ito:<br></b>
+							<ul>
+								<li>Pinaniniwalaang ang Roma ay nagmula sa isang alamat na sinasabing pagsilang ng kambal na sina Romulos at Remus. Ang mga ito ay anak ng diyos na si Mars sa isang princesa.</li><br>
+
+								<li>Ayun sa kuwento na hango sa istoryador na nagngangalang Livy. Noong Abril 21, 753 B.C.E. Ang magkapatid na si Romulos at Remus ay nagtatag ng syudad sa bundok ng palestine.</li><br>
+
+								<li>Ayun kay Livy may mga nakitang ebidensya ng pagkatatag ng isang pamayanan sa Roma at ito ay nagsimula noong 500 B.C.E sa panahong ito sinasabing nagsama-sama ang mga tao sa rehiyon.</li><br>
+							<ul>
+						</div>
+						
+							<!-- main line -->
+							<span class="line"></span>
+							<hr>
+					</div>
+						<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ0tzytwVL4hhSVNyfcXprymhoFt5YOIecvIDAgIwFgx51xS1qePlF45a4-Y2awMAXG268q7mnHk64p/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" webkitallowfullscreen="true" class="ggs"></iframe><br><br>
+				</div>
+
+				<!-- section title -->
+				<h2 class="section-title wow fadeInUp" id="ss">UAE Social Studies</h2>
+
+				<div class="spacer" data-height="30"></div>
+
+				<!-- contents wrapper -->
+				<div class="content-wrapper">
+				
+					<!-- content item -->
+					<div class="c-i">
+						<div class="text">
+							<h2>African Colonialization and Independence (Lesson 6)</h2>
+							<div class="glcon">
+								<a href="#gallery-1" class="gallery-link">
+									Click here to see the Lesson 6 outputs gallery.
+								</a>
+								<div id="gallery-1" class="gallery mfp-hide">
+									<a href="images/gl1.jpg"></a>
+									<a href="images/gl2.jpg"></a>
+								</div>
+							</div>
+							<h3>Result of the Berlin Conference</h3>
+							<b>What is the Berlin Conference?</b><br>
+							The Berlin Conference of 1884–1885, also known as the Congo Conference or West Africa Conference, regulated European colonization in Africa during the New Imperialism period and coincided with Germany's sudden emergence as an imperial power. <br><br>
+							The conference contributed to ushering in a period of heightened colonial activity by European powers, which eliminated or overrode most existing forms of African autonomy and self-governance.<br><br>
+							<b>Outcome of the Berlin Conference</b><br>
+							The Berlin Conference was intended to reduce the conflict between European Nations and discard the slave trade, but ultimately divided up Africa to the European Nations.  <br><br>
+							The General Act of the Berlin Conference, formalized the Scramble for Africa. The diplomats in Berlin laid the rules of competition by which the great powers were to be guided in seeking colonies. No nation was to stake claims in Africa without notifying other powers of its intentions.<br><br>
+							In 1884, Otto von Bismarck convened the Berlin Conference to discuss the African problem. Its outcome, the General Act of the Berlin Conference, formalized the Scramble for Africa. The diplomats in Berlin laid the rules of competition by which the great powers were to be guided in seeking colonies. <br><br>
+							In conclusion, The Berlin conference was significant due to the major role it had in the colonization of Africa. It gave European nations the opportunity to take control of Africa and disregard the Natives that were there before them and just do what they wanted to do.
+							<hr>
+							<h2>Modern Kenya (Lesson 7)</h2>
+							<div class="glcon">
+								<a href="#gallery-2" class="gallery-link">
+									Click here to see the Lesson 7 outputs gallery.
+								</a>
+								<div id="gallery-2" class="gallery mfp-hide">
+									<a href="images/glk1.jpg"></a>
+									<a href="images/glk2.jpg"></a>
+									<a href="images/glk3.jpg"></a>
+								</div>
+							</div> <br>
+							<b>Valuable Exports of Kenya</b><br>
+							Kenya’s largest export category is the vegetables. Other examples of crops grown in and exported from Kenya are spices, live trees, live and cut flowers, fruits and nuts. This also includes tea and coffee.
+							<br><br>
+							
+							<img src="./images/graph.png" class="image">
+							
+							<hr>
+							<h2>African Resources and Economy (Lesson 8)</h2>
+							<b>Fun fact:</b><br>
+							Africa's two most profitable mineral resources are gold and diamonds. In 2008, Africa produced about 483 tons of gold, or 22 percent of the world's total production. South Africa accounts for almost half of Africa's gold production. Ghana, Guinea, Mali, and Tanzania are other major producers of gold.
+							<div class="glcon">
+								<a href="#gallery-3" class="gallery-link">
+									<br>
+									Click here to see the Lesson 8 outputs gallery.
+								</a>
+								<div id="gallery-3" class="gallery mfp-hide">
+									<a href="images/gle1.jpg"></a>
+									<a href="images/gle2.jpg"></a>
+									<a href="images/gle3.jpg"></a>
+									<a href="images/gle4.jpg"></a>
+									<a href="images/gle5.jpg"></a>
+								</div>
+							</div> 
+							
+						</div>
+					</div>
+				</div>
+				<hr>
+				<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSo_OIgvahC0PXYSl2T15wSIzyognhH6QAyV2Nm-us78Uasw7l-jSEdPFQT3GE6rWzuFjVFWssreY5z/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" class="ggs"></iframe>
+			</div>
+			
+			<div id="en-wrapper" style="display: none;">
+				<!-- section title -->
+				<h2 class="section-title wow fadeInUp" id="ap">English</h2>
+
+				<div class="spacer" data-height="30"></div>
+
+				<!-- contents wrapper -->
+				<div class="content-wrapper">
+				
+					<!-- content item -->
+					<div class="c-i">
+						<div class="text">
+							<h2>African, Asian, Emirati Stories</h2>
+							<div class="video">
+								<video class="videos" playsinline controls style="border-radius: 20px">
+									<source src="./media/ens.mp4" type="video/mp4"/>
+							  	</video>
+							</div>
+							
+							<hr>
+							<h2>Journalistic Writing</h2>
+							<table class="tg" style="text-align: left !important;">
+								<thead>
+								  <tr>
+									<th class="tg-7jy7" style="text-align: left !important; "><span><b>Headline or Title of the report</b></span></th>
+									<th class="tg-c3ow" style="text-align: left !important; ">COVID-19: UAE hosting vaccine trial for Sputnik V is good news</th>
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+									<td class="tg-7jy7" style="text-align: left !important; "><span><b>Byline (name of the reporter)</b></span></td>
+									<td class="tg-c3ow" style="text-align: left !important; ">By Hina Navin, October 14, 2020 15:10</td>
+								  </tr>
+								  <tr>
+									<td class="tg-7jy7" style="text-align: left !important; "><span style="text-align: left !important;"><b>Summary Lead</b></span><br><span><i>(This contains most of the 5Ws and 1H)</i></span></td>
+									<td class="tg-c3ow" style="text-align: left !important; text-indent: 20px !important;">The UAE has been chosen for Russian and Chinese vaccine trials. Only one vaccine has been approved so far, Sputnik V, which was approved by Russia’s health regulators on August 11. The UAE this week announced it would host phase III trials for this vaccine, the second trial after the emirates conducted trials for a Chinese vaccine.<br><p>
+									Another big advantage is diverse demography of the UAE, home to people from every part of the globe. The two trials demonstrate global health experts’ faith in the UAE institutions’ ability to maintain integrity of collecting and processing scientific data.</p>
+									</td>
+								  </tr>
+								  <tr>
+									<td class="tg-7jy7" style="text-align: left !important; "><span><b>Facts or details arranged from the most important to the least important</b></span></td>
+									<td class="tg-c3ow" style="text-align: left !important; ">
+										<ul>
+											<li>The UAE has been chosen for vaccine trials of the Sputnik V vaccine and Chinese vaccines because the country has world-class, health care infrastructure.</li>
+											<li>Sputnik V uses adenoviral vectors human adenoviruses that have had their genetic material removed that trick the recipient’s body into producing immune response.</li>
+											<li>Countries hosting trials will have a clear advantage in getting early access to the vaccine.</li>
+											<li>31,000 volunteers, including the UAE’s top health officials have received the Chinese vaccine as part of phase III trials.</li>
+											<li>The Sputnik V vaccine is named after Sputnik 1, the first artificial Earth satellite launched in 1957.</li>
+											</ul>
+									</td>
+								  </tr>
+								</tbody>
+								</table><br><br>
+							<div class="popout-section"><br>
+								<h2>Philippines: Surge in Child Abuse Cases Amidst a Pandemic</h2>
+								<hr>
+								<i>Clarence Pagaduan<br>
+								November 26, 2020</i>
+								<br><br>
+								<b>A report from the Philippines Department of Social Welfare and Development (DSWD) shows a sudden spike in child abuse, both violent and sexual, in relation to the COVID-19 quarantine.</b><br><br>
+								<img src="images/enbnr.png" class="image" alt="banner"><br><br>
+								In many Third World countries, violence against children continues to be a pressing problem, especially during this on-going COVID-19 pandemic. Such violence is often manifested in the form of abuse. The Philippines is similar to many other Asian countries in the way this type of domestic violence is observed.
+								<br><br>
+								Despite the increasing awareness of children's rights and the protection of children, there continue to be several reported cases of child abuse in Asian countries like the Philippines. In the Philippines, there are approximately 40 million children under the age of 18 and according to several reports, there were over 300,000 cases of child exploitation and online abuse in the Philippines, said the DoJ, using data from the U.S.-based National Center for Missing and Exploited Children. While there were only 100,000 cases during this timeframe in 2019. Of these cases, 44.5% were classified as sexual abuse, 21.67% as physical abuse, and 15.07% as neglect. 
+								<br><br>
+								Planning Officer Aple Shane Lomoljo said that in a study conducted by the Council for the Welfare of Children (CWC), the perpetrators of the abuse are usually housemates and family members of the children. Increasing risks of violence where the children are exposed include maltreatment, gender-based violence, and sexual exploitation. Lomoljo said that what increases the likelihood that the children are physically, psychologically, or sexually abused is that some of the parents are distressed in losing their jobs because of the pandemic, and they tend to take it out on their children.
+								<br><br>
+								She said child abuse causes the children to be emotional, as it changes the way on how the child sees him/herself, how he decides for him/herself, and how he/she perceives other people. 
+								<br><br>
+								The DSWD is highly requesting any witnesses of such cases to report it immediately.
+
+								<div class="glcon">
+									<a href="https://drive.google.com/file/d/11v36dovvvzO3q_7XM2Cl-IR63-zuFm6G/view?usp=sharing" target="_blank">
+										Click here to view the original copy.
+									</a>
+								</div>
+							
+							</div>
+							<hr>
+							<div>
+							<h2>Lead Writing Exercise</h2><br>
+							<b>1. You are writing for a newspaper near this accident. Write a lead for this afternoon’s paper.</b><br><br>
+
+							 <b>WHO:</b> Amtrak train called the Colonial<br>
+							 
+							<b>WHAT:</b> Collided with three Conrail locomotives on a switch that merges four tracks into two <br>
+
+							<b>WHEN:</b> 1:30 p.m. yesterday <br>
+
+							<b>WHERE:</b> Baltimore, Maryland <br>
+
+							<b>WHY:</b> Larry Case, Amtrak spokesman: The Conrail diesels, like the Amtrak, were northbound. The Conrail had apparently run a stop sign. <br>
+
+							<b>OTHER:</b> At least 15 dead, 175 injured. Worst accident in Amtrak’s 132-year history.<br><br>
+							<b>Lead:</b>Amtrak train collides with three Conrail locomotives at 1:30 PM yesterday, killing at least 15 people and injuring 175 others in Amtrak’s worst accident in its 132-year history.<br><br>
+							
+						   <b>2. From the following facts, write a lead. </b><br><br>
+
+						   <b>WHO:</b> a nuclear weapon with a yield equivalent to 150,000 tons of TNT<br>
+
+						  <b>WHAT:</b> detonated<br>
+
+						  <b>WHERE:</b> 40 miles from a meeting of pacifists and 2,000 feet beneath the surface of Pahute Mesa in the Nevada desert<br>
+
+						  <b>WHEN:</b> Tuesday<br>
+
+						  <b>WHY:</b> To test the weapon <br>
+
+						  <b>OTHER:</b> Department of Energy officials are the source; 450 physicians and peace activists were gathered to protest continued nuclear testing by the United States.<br><br>
+
+						  <b>Lead:</b> Amtrak train collides with three Conrail locomotives at 1:30 PM yesterday, killing at least 15 people and injuring 175 others in Amtrak’s worst accident in its 132-year history.<br><br>
+
+						  <b>3. From the following facts, write the first two paragraphs of a news article.</b><br><br>
+
+						  <b>WHO:</b> 7-year-old boy missing for three years.<br>
+
+						 <b>WHAT:</b> found<br>
+
+						 <b>WHERE:</b> in Brick Township, N.J.<br>
+
+						 <b>WHEN:</b> Monday night<br>
+
+						 <b>HOW:</b> A neighbor recognized the child’s picture when it was shown after the movie Adam: The Song Continues and called police.<br>
+
+						 <b>OTHER:</b> Police arrested the boy’s mother, Ellen Lynn Conner, 27; she faces Oregon charges of kidnapping and interference with a custody warrant. <br><br>
+
+						 <b>Lead:</b> A 7-year old boy was found on Monday night in Brick Township, N.J. after being missing for 3 years. A neighbor recognized the child’s picture when it was shown after the movie Adam: The Song Continues and called the police. <br><br>
+
+						 The police arrested the boy’s 27-year-old mother, Ellen Lynn Conner. She faces Oregon charges of kidnapping and interference with a custody warrant.
+						 <br><br>
+
+						 <b>4. From the following facts, write the first two paragraphs of a news article. </b><br><br>
+
+						 <b>WHO:</b> 40 passengers<br>
+
+						<b>WHAT:</b> evacuated from a Northwest Airlines jet, Flight 428<br>
+
+						<b>WHERE:</b> at the LaCrosse, Wis. Municipal Airport<br>
+
+						<b>WHEN:</b> Monday following a flight from Minneapolis to LaCrosse<br>
+
+						<b>WHY:</b> A landing tower employee spotted smoke near the wheels<br>
+
+						<b>OTHER:</b> There was no fire or injuries; the smoke was caused by hydraulic fluids leaking onto hot landing brakes, according to Bob Gibbons, a Northwest spokesman. <br><br>
+
+						<b>Lead:</b> 40 passengers were evacuated from a Northwest Airlines jet, Flight 428  on a Monday following a flight from Minneapolis to LaCrosse after a landing tower employee spotted smoke near the wheels of the plane. The evacuation took place at at the LaCrosse, Wis. Municipal Airport.<br><br>
+						According to Northwest spokesman Bob Gibbons, “There was no fire or injuries; the smoke was caused by hydraulic fluids leaking onto hot landing brakes”. 
+						<div>
+						<hr>
+						<div class="essaycon">
+							<h2 class="essaytitle">Chinese Family Values</h2>
+							<h3 class="essaytitle">The Love of a Child to their Parents</h3>
+							<p class="essayp">
+								<img src="./images/ene1.png" alt="Family" class="image essay-image e1">
+								“The family is one of nature's masterpieces”, a man once said. Family is something that upholds the values and morals that people have, and they have been a part of daily life for many centuries. It is said that a parent’s love for their child is stronger than anything in the universe, but a child’s love can be just as strong. China has been through several dynasties for over 4000 years and has been exploited several times by foreign countries, despite all this, one value still remains to this day, the love of a family.			
+							<p>
+							<p class="essayp">
+								Have you ever heard of the tale of Mulan? According to the legend, Mulan takes her aged father's place in the conscription for the army by disguising herself as a man. This story sets a good example of the love that strengthens and sets Chinese families aside from the rest.  Unlike modern families today where the ‘hierarchy’ is evenly distributed between the elders and the parents, Chinese traditional families had roles based on gender and age and used to be very patriarchal, this meant that it was very emphasized that the male in the family, typically the oldest, be the head of the house, and take the responsibility of protecting their families, while women, on the other hand, have the responsibility of taking care of the house, the children, and bring honor to the family.
+							<p>
+							<p class="essayp">
+								<img src="./images/ene2.png" alt="Filial Piety" class="image essay-image e2">
+								Of the 8 most important values in Chinese traditional culture, filial piety is one of them. Filial piety is a virtue of respect for one's parents, elders, and ancestors. When children demonstrate filial piety in China, they are viewed as trustworthy and respectable. But how did these family values come to be such an important part of the Chinese traditional culture?
+
+							<p>
+							<p class="essayp">
+								In China, the family is largely understood through Confucian thought. In Confucian thinking, the family contains the most important relationships for individuals and forms the foundations of all social organization. This is in accordance with filial piety, the Confucian tenet that stresses the importance of age. The Chinese philosopher Confucius is most responsible for making filial piety a pivotal part of society. He described filial piety and argued for its importance in creating a peaceful family and society in his book, "Xiao Jing," also known as the "Classic of Filial Piety" which was written in the 4th century BCE.
+							</p>
+						</div>
+
+						<div class="video">
+							<video class="videos" class="player" playsinline controls style="border-radius: 20px">
+								<source src="./media/PAGADUAN.mp4" type="video/mp4"/>
+							  </video>
+						</div>
+
+						</div>
+
+					</div>
+				
+				</div>
+
+					</div>
+					
+				</div>
+
+			</div>
+
+			<div id="fil-wrapper" style="display: none;">
+				<!-- section title -->
+				<h2 class="section-title wow fadeInUp" id="fil">Filipino</h2>
+
+				<div class="spacer" data-height="30"></div>
+
+				<!-- contents wrapper -->
+				<div class="content-wrapper">
+				
+					<!-- content item -->
+					<div class="c-i">
+						<div class="text">
+							<h2>Sarsuwela Sanaysay (Indibidwal na Gawain)</h2>
+							<div class="popout-section">
+								<h2>Sarsuwela sa Kamalayan ng Isang Pilipino</h2><br>
+								<p>
+									Ang sarsuwela ay isang uri ng dulang komedya o melodrama na mayroong awit at kantahan, katulad ng isang ‘musical play’. Mula nang ito’y ipinakilala, lubos itong nakaapekto sa kamalayan, katalinhaga, at pagiging malikhain ng Pilipino, at ito ay talagang nagpapakita na ang mga Pilipino ay kakaiba kumpara sa ibang tao.<br><br>
+
+									Ang sarsuwela, bagama’t pinakilala noong panahon ng mga Kastila ay lubos na namulaklak ng panahon ng mga Amerikano. Ang zarzuela ay naging isang "makapangyarihang paraan" ng pagpapahayag ng nasyonalismong Pilipino sa panahon ng Pagsakop sa Espanya ng Pilipinas na sumunod sa tatlong siglo ng pamamahala ng Espanya. Masasalamin natin sa mga ito ang mga nangyare sa nakaraan (kasaysayan), mga damdamin ng mga Pilipino, at kung paano namumuhay ang mga tao. Isang mahusay at magaling na halimabawa ng sarsuwela ay ang sarsuwelang “Walang Sugat” na sinulat ng Severino Reyes noong 1898. Sa dulang ito, ang pangunahing tauhan na si Tenyong, ay napilitang iwanan ang kanyang kasintahan at magiging asawa na si Julia dahil kailangan pumunta sa isang labanan laban sa mga Kastila. Hindi man direkta, napapakita pa rin nito ang historya o kasaysayan ng Pilipino sa pananakop ng mga Kastila. <br><br>
+
+									Sa pamamagitan ng mga sarsuwelang ito ay napapakita ng mga aktor sa sarsuwela ang mga pangyayari na naganap sa iba’t ibang rehiyon at lugar sa bansa at nabibigyan nila ang mga ibang Pilipino ng dagdag kaalaman tungkol sa kultura at pamumuhay ng isang rehiyon, at dahil dito napapalawak nila ang kultura natin. <br><br>
+
+									Ito’y lubhasang nakaimpluwensya sa mga tao sapagkat pinapakita nito ang pagiging magaling at malikhain ng mga Pilipino sa mga patulang uri ng aliwan.<br><br> 
+								</p>								
+							</div>
+							<hr>
+							<h2>Sarsuwela Tsart (Pangkatang Gawain)</h2>
+							<img src="./images/filimg1.png" class="image" alt="tsart">
+							<hr>
+							<h2>Sanaysay Video (Pangkatang Gawain)</h2>
+							<div class="video">
+								<video class="videos" playsinline controls style="border-radius: 20px">
+									<source src="./media/filvid1.mp4" type="video/mp4"/>
+							  	</video>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="mec-wrapper" style="display: none;">
+				<!-- section title -->
+				<h2 class="section-title wow fadeInUp" id="mec">Moral Education</h2>
+
+				<div class="spacer" data-height="30"></div>
+
+				<!-- contents wrapper -->
+				<div class="content-wrapper">
+				
+					<!-- content item -->
+					<div class="c-i">
+						<div class="text">
+							<div>
+								<h2>Performance Task #1</h2>
+								<h3>"Swimming Against the Tide"</h3>
+								<div class="imgconcon">
+									<div class="imgContainer">
+										<img src="./images/mect1.png" class="image" alt="Taxi image">
+										<img src="./images/mect2.png" class="image" alt="Taxi image">
+									</div>
+								</div>
+								<br>
+								<b>Scenario:</b>
+								<p>
+									Stevania is from Bangladesh. She works as a taxi driver in the USA, most of her American passengers, as well as her co-taxi drivers, treat her poorly because she’s from a foreign country. One day she met a new taxi driver from Mauritania. Her name was Stephie. She is from a well off family and was also experiencing descrimination virus, except for Stevania and Stephie. They continued working as taxi drivers minat occurred because of her nationality. A few years later, a pandemic haded, all of the other taxi drivers went on unpaid leave in fear of tand would even go to volunteer centers to help those in need. One day, they had heard that their former American co-worker named Moofasah had been struggling to pay their bills. The two helped him out, and Moofasah realized that despite the discrimination he gave to the two, they still helped him out.
+								</p><br>
+								<b>Character:</b>
+								<p>
+									The characters are Stephie, Stevania the taxi driver and the co-worker.
+								</p><br>
+								<b>Problem:</b>
+								<p>
+									Her passengers and co-taxi drivers often judge her due to her having a different nationality and race.
+								</p><br>
+								<b>Solution:</b>
+								<p>
+									They helped out there former co-worker despite the discrimanation.
+								</p><br>
+								<b>Moral:</b>
+								<p>
+									No matter what bad things other people throw at you, treat them with kindness, and time will come to pass that they realize that they should also start accepting others.
+								</p><br>
+								<b>Ending:</b>
+								<p>
+									Stevania and Stephie helped a co-worker that has been discriminating them, and he realized that they still continued being nice to others despite being judged and treated poorly.
+								</p><br>
+							</div>
+
+							<hr>
+
+							<div>
+								<h2>Performance Task #2</h2>
+								<h3>Brochure About Differences in My Community</h3> 
+								<img src="/images/mecimg1.png" class="image" alt="Brochure page 2">
+								<div class="spacer" data-height="20"></div>
+								<img src="/images/mecimg2.png" class="image" alt="Brochure page 2">
+							</div>
+
+							<hr>
+
+							<div>
+								<h2>Majlis</h2>
+								<img src="./images/mecimg3.png" class="image" alt="collage with majlis">
+
+								<br><br>
+
+								<b>What is a Majlis</b>
+								<p>
+									In pre-Islamic Arabia, Majlis was a tribal council in which the male members participated in making decisions of common interest. The council was presided over by the chief (Sheikh) During the period of the Rashidun Caliphate majlis al-shura was formed. The majlis during the Rashidun was to elect a new caliph.
+								</p>
+
+								<p>
+									In many Arab homes, the majlis is the meeting room or front parlor used to entertain visitors. In Saudi Arabia, the decoration of the majlis in the home is often the responsibility of the women of the house, who either decorate the area themselves or barter with other women to do it for them.
+								</p>
+
+								<div class="glcon">
+									<a href="https://docs.google.com/presentation/d/1b6yKzx0uE4mxufnthNCgjFJMs4pYp1iiGzkOlQ83ZyQ/edit?usp=sharing" target="_blank">
+										Click here to view the original copy.
+									</a>
+								</div>
+								
+							</div>
+
+							<hr>
+
+							<div>
+								<h2>Sheikh Zayed as a Father and Founder of The UAE (Group Activity)</h2>
+								<b>What does it take to be a good father, and a founder of a nation like the UAE?</b>
+								<p>
+									In order to become a good founder and leader, you must be able to gain the trust of your people and become a good role model to lead them in the right path, while also giving way for those who will take the role of being your. Good communication skills and decision-making capabilities also play a vital role in success and failure of a leader.
+								</p>
+								<img src="./images/mecimg4.png" class="image" alt="Sheikh Zayed Collage">
+							</div>
+						</div>
+					</div>
+					<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTfjbWjLNPmRM6R9i6v-6HCZDZtnrJ9e6n6xa1D0_D-RhJ3pWKbZg7sSEVIuM5v4YXSLMpOly_VHnCz/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" class="ggs"></iframe>
+				</div>
+			</div>
+
+			<div id="mapeh-wrapper" style="display: none;">
+				<!-- section title -->
+				<h2 class="section-title wow fadeInUp" id="mapeh">MAPEH</h2>
+
+				<div class="spacer" data-height="30"></div>
+
+				<!-- contents wrapper -->
+				<div class="content-wrapper">
+				
+					<!-- content item -->
+					<div class="c-i">
+						<div class="text">
+							<h2>Music</h2>
+							<div>
+
+								<h3>Japan</h3>
+								<p>
+									The music of Japan often looks to represent natural sounds, and the sounds of life, through percussion, wind and stringed instruments. An interesting feature of classical Japanese music is its sparse rhythm and absence of regular chords. All of the rhythms are 'ma'-based and silence is an important part of the songs.
+								</p>
+								<b>Musical Elements in the Music of Japan</b>
+								<ul>
+									<li>
+										<b>Timbre:</b> Japanese music is usually sung in a high, tight, throated
+										voice and melismatic in manner.
+									</li><br>
+									
+									<li>
+										<b>Tempo:</b> The music of Japan usually begins with a slower pace and gets faster and gets slower again moving into a long transition and ends with a drawn-out ending.
+									</li><br>
+									
+									<li>
+										<b>Pitch and Tonal System:</b> Japanese music was influenced by the Royal
+										Court of China which is based on pentatonic scale. Indonesia and
+										India have the greatest contributions to its development. Japanese
+										music is usually sung in a high, tight, throated voice and melismatic in
+										manner.
+									</li><br>
+
+									<p>
+										Yo-sen and In-sen are the two basic types of scales of Japanese music.
+										Both are pentatonic in nature used in playing koto and shamisen. The
+										male scale is known as Yo-sen and the female scale is called In-sen.
+									</p>
+
+									<li>
+										<b>Texture and Rhythm:</b> : Naturally, Japanese music is monophonic, has free rhythms where they are ma-based (gap) with silence as the most significant element of Japanese songs. Japanese music is written in a duple meter.
+									</li><br>
+									
+								</ul>
+								
+								<div class="video center" style="width: 40%; text-align: center !important;">
+									<video class="videos" playsinline controls style="border-radius: 20px;">
+										<source src="https://drive.google.com/open?id=1MtsvMQIUviyMO_aORQ7wzKepwShzSmDG" type="video/mp4"/>
+									  </video>
+									
+								</div>
+								<div>
+									<h3>China</h3>
+									<p>
+										Traditional music in China is played on solo instruments or in small ensembles of plucked and bowed stringed instruments, flutes, and various cymbals, gongs, and drums. The scale is pentatonic. ... Chinese orchestras traditionally consist of bowed strings, woodwinds, plucked strings and percussion.
+									</p>
+									<div class="video center" style="width: 100%; text-align: center !important;">
+										<video class="videos" playsinline controls style="border-radius: 20px;">
+											<source src="https://fast.wistia.com/embed/medias/dqlpvewsq7" type="video/mp4"/>
+										  </video>
+									</div>
+								</div>
+							</div>
+
+							<hr>
+
+							<h2>Arts</h2>
+							<div>
+								<h3>Japan</h3>
+								<b>Characteristics of Arts & Crafts of Japan</b>
+
+								<ul>
+									<b>Costume:</b>
+									<li style="margin-left: 0.5em;">
+										The Japanese decorated their loose, one-piece robe with designs of flowers, cherries and birds.
+									</li>
+									<li style="margin-left: 0.5em;">
+										There are plenty of outlines on their kimono as influenced by the Classical Han period Chinese attire
+									</li>
+									<li style="margin-left: 0.5em;">
+										The style of the kimono varies accordingly to seasons.
+									</li>
+									<li style="margin-left: 0.5em;">
+										Fabrics made of cotton and rayon preferred for kimonos.
+									</li><br>
+
+
+									<b>Japanese Painting:</b>
+									<li style="margin-left: 0.5em;">
+										Painting is the preferred artistic expression in Japan.
+
+									</li>
+									<li style="margin-left: 0.5em;">
+										It is practiced by both amateurs and professionals.
+									</li>
+									<li style="margin-left: 0.5em;">
+										Japanese still write with a brush rather than a pen.
+									</li>
+									<li style="margin-left: 0.5em;">
+										Their familiarity with brush techniques has made them particularly sensitive to the artistic values of painting.
+									</li><br>
+
+									<b>Japanese Sculptures:</b>
+									<li style="margin-left: 0.5em;">
+										Most Japanese sculpture is associated with religion, and the medium’s use declined with the lessening importance of traditional Buddhism.
+
+									</li>
+									<li style="margin-left: 0.5em;">
+										The Kei school of sculptors in Japan particularly the Unkei, created a new, more realistic style of sculpture.
+									</li>
+									<li style="margin-left: 0.5em;">
+										Unkei’s polychromed wood sculptures of two Indian sages, Muchaku and Seshin, the legendary founders of the Hosso sect, are the among the most realistic works of the period.
+
+									</li>
+									<li style="margin-left: 0.5em;">
+										They are remarkably individualized and believable images.
+									</li>
+								</ul>
+
+								<img src="./images/artjapan.jpg" alt="Art of Japan Activity" class="image">
+								<br>
+
+								<h3>China</h3>
+								<b>Characteristics of Arts & Crafts of China</b>
+								<b>Attire:</b>
+								<p>
+									The Chinese like to wear their traditional dresses in the Classical Han Period style fashion-loose robes with long sleeves. In the course of time, they wore them with loose trousers and underskirts with belts.
+								</p>
+								<ul>
+									<b>Chinese Painting:</b>
+									<li style="margin-left: 0.5em;">
+										The Chinese considered painting to be the only fine art.
+									</li>
+									<li style="margin-left: 0.5em;">
+										To them, architecture and sculpture were classified as crafts.
+									</li>
+									<li style="margin-left: 0.5em;">
+										The main kinds of Chinese paintings are frescoes and paintings on wood panels.
+									</li>
+									<li style="margin-left: 0.5em;">
+										Others are watercolor paintings and ink drawings which are done first on silk, and later on rice paper.
+									</li><br>
+
+
+									<b>Chinese Sculptures:</b>
+									<li style="margin-left: 0.5em;">
+										The most notable Chinese sculptures in China are Buddhist figures.
+
+									</li>
+									<li style="margin-left: 0.5em;">
+										The Chinese used clay and wood rather that stone in sculptured figures.
+									</li>
+									<li style="margin-left: 0.5em;">
+										They found out that clay, with its inherent plasticity, allows for a softer rendition of the figure.
+									</li>
+									<li style="margin-left: 0.5em;">
+										The result then looks more realistic.
+									</li><br>
+								</ul>
+							</div>
+
+							<hr>
+
+							<h2>PE</h2>
+							<div>
+								<div class="video">
+									<video class="videos" playsinline controls style="border-radius: 20px">
+										<source src="./media/20210102_184239.mp4" type="video/mp4"/>
+								  	</video>
+								</div>
+								<div class="video">
+									<video class="videos" playsinline controls style="border-radius: 20px">
+										<source src="./media/20210102_184357.mp4" type="video/mp4"/>
+								  	</video>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="sci-wrapper" style="display: none;">
+				<!-- section title -->
+				<h2 class="section-title wow fadeInUp" id="sci">Science</h2>
+
+				<div class="spacer" data-height="30"></div>
+
+				<!-- contents wrapper -->
+				<div class="content-wrapper">
+				
+					<!-- content item -->
+					<div class="c-i">
+						<div class="text">
+							<div>
+								<h2>Earthquakes</h2>
+								<b>Describe a reverse or thrust fault</b>
+								<p>
+									Reverse dip-slip faults result from horizontal compressional forces caused by a shortening, or contraction, of Earth's crust. The hanging wall moves up and over the footwall. Thrust faults are reverse faults that dip less than 45°.
+								</p>
+
+								<b>What causes its formation?</b>								
+								<p>
+									Thrust and Reverse faults form by horizontal compressive stresses and so cause shortening of the crust. Because the hanging wall moves up relative to the footwall, most of these faults place older rocks over younger rocks. Younger over older relations can occur when previously .deformed rocks are thrust faulted.
+								</p>
+								<b>What geologic events and features are produced by its movement?</b>
+								<p>
+									Earthquakes.
+								</p>
+
+								<div class="video">
+									<video class="videos" playsinline controls style="border-radius: 20px">
+										<source src="./media/sci1.mp4" type="video/mp4"/>
+								  	</video>
+								</div>
+							</div>
+
+							<hr>
+
+							<div>
+								<h2>Independent Learning Activity</h2>
+								<h3>Questions:</h3>
+								<ol>
+									<li>
+										What are the different types of seismic waves?
+									</li>
+									<li>
+										Why are aftershocks more dangerous than the main quake?
+									</li>
+									<li>
+										Were scientists able to find ways to predict earthquakes? If not, were there ways for them to have a hint of its occurrence?
+									</li>
+								</ol>
+
+								<div>
+									<h3>Types of Seismic Waves</h3>
+									<ol>
+										<li>P-wave (Primary Wave)<br>
+										<ul style="list-style-type: lower-alpha; padding-bottom: 0;">
+											<li style="margin-left:0.5em">
+												This is the fastest kind of seismic wave, and, consequently, the first to 'arrive' at a seismic station. The P wave can move through solid rock and fluids, like water or the liquid layers of the earth. It pushes and pulls the rock it moves through just like sound waves push and pull the air.  
+												<ul style="list-style-type: lower-greek;">
+													<li style="margin-left:1em">
+														<b>Fun fact: Sometimes animals can hear the P waves of an earthquake. Dogs, for instance, commonly begin barking hysterically just before an earthquake 'hits' (or more specifically, before the surface waves arrive).</b>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										</li><br>
+										<li>S-wave (Secondary Wave)<br>
+										<ul style="list-style-type: lower-alpha; padding-bottom: 0;">
+											<li style="margin-left:0.5em">
+												This is the second wave you feel in an earthquake. It is slower than a P wave and can only move through solid rock, not through any liquid medium. S waves move rock particles up and down, or side-to-side--perpendicular to the direction that the wave is traveling in (the direction of wave propagation).
+
+												<ul>
+													<li style="margin-left:1em">
+														<b>Fun fact:  The property of S waves which states that they can only move through solids led seismologists to conclude that the Earth's outer core is a liquid.</b>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										</li><br>
+										<li>L-wave (Love Wave)<br>
+										<ul style="list-style-type: lower-alpha; padding-bottom: 0;">
+											<li style="margin-left:0.5em">
+												The first kind of surface wave is called a Love wave, a surface wave is of a lower frequency than body waves, and is easily distinguished on a seismogram as a result, they can only travel through the crust. A love wave is the fastest surface wave and moves the ground from side-to-side. Confined to the surface of the crust, Love waves produce entirely horizontal motion.  
+												<ul>
+													<li style="margin-left:1em">
+														<b>Fun fact: The love wave was named after A.E.H. Love, a British mathematician who worked out the mathematical model for this kind of wave in 1911.</b>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										</li><br>
+										<li>R-wave (Rayleigh Wave)<br>
+										<ul style="list-style-type: lower-alpha; padding-bottom: 0;">
+											<li style="margin-left:0.5em">
+												A Rayleigh wave rolls along the ground just like a wave rolls across a lake or an ocean. Because it rolls, it moves the ground up and down, and side-to-side in the same direction that the wave is moving. Most of the shaking felt from an earthquake is due to the Rayleigh wave, which can be much larger than the other waves.
+												<ul>
+													<li style="margin-left:1em">
+														<b>Fun fact:  This type of wave was named for John William Strutt, Lord Rayleigh, who mathematically predicted the existence of this kind of wave in 1885
+														</b>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										</li><br>
+									</ol>
+								</div>
+
+								<div>
+									<h3>Why are aftershocks more dangerous than the main quake?</h3>
+									<ul>
+									<li>
+										Aftershocks can be more dangerous as they are very unpredictable (they may not even occur until a few days or weeks later) and can destroy/collapse structures that have been damaged by the main shock
+									</li><br>
+									<li>
+										Some aftershocks may have a magnitude just as high as the main earthquake. There may also be some cases where an aftershock is so strong, that they may even be stronger than the main quake itself.
+									</li>
+									</ul>
+								</div>
+								<br>
+
+								<h3>Were scientists able to find ways to predict earthquakes? If not, were there ways for them to have a hint of its occurrence?</h3>
+								<p>
+									Scientists to this day have not found a proper method of predicting earthquakes the United States Geological Survey (USGS) have stated:
+								</p>
+								<p>
+									<i><b>
+										“Neither the USGS nor any other scientists have ever predicted a major earth>quake. We do not know how, and we do not expect to know how any time in the foreseeable future. USGS scientists can only calculate the probability that a significant earthquake will occur in a specific area within a certain number of years.”
+									</b></i>
+								</p>
+								<p>
+									According to a blog on wikihow: days, or mere seconds, before an earthquake, people have observed strange lights from the ground or hovering in the air. Though they are not fully understood, earthquake lights may be emitted from rocks that are under extreme stress. Phenomenons like these are called earthquake precursors. 
+								</p>
+								<p>
+									The term earthquake precursor is used to describe a wide variety of physical phenomena that reportedly precede at least some earthquakes. These phenomena include induced electric and magnetic fields, groundwater level changes, gas emissions, temperature changes, surface deformations, and anomalous seismicity patterns.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="math-wrapper" style="display: none;">
+				<!-- section title -->
+				<h2 class="section-title wow fadeInUp" id="math">Math</h2>
+
+				<div class="spacer" data-height="30"></div>
+
+				<!-- contents wrapper -->
+				<div class="content-wrapper">
+				
+					<!-- content item -->
+					<div class="c-i">
+						<div class="text">
+							<div class="glcon">
+								<a href="#gallery-4" class="gallery-link">
+									Click here to view the gallery of all images
+								</a>
+								<div id="gallery-4" class="gallery mfp-hide">
+									<a href="images/mathimg1.jpg"></a>
+									<a href="images/mathimg2.png"></a>
+									<a href="images/mathimg3.png"></a>
+									<a href="images/mathimg4.png"></a>
+									<a href="images/mathimg5.png"></a>
+									<a href="images/mathimg6.png"></a>
+									<a href="images/mathimg7.png"></a>
+									<a href="images/mathimg8.png"></a>
+									<a href="images/mathimg9.png"></a>
+									<a href="images/mathimg10.png"></a>
+								</div>
+							</div>
+							
+							<hr>
+
+							<div>
+								<img src="/images/mathimg1.jpg" alt="Coordinate plane and a floor diagram" class="image">
+							</div>
+
+							<hr>
+							
+							<div>
+								<img src="/images/mathimg2.png" alt="Coordinate Plane Art points Identification" class="image">
+							</div>
+
+							<hr>
+
+							<div>
+								<iframe src="https://www.desmos.com/calculator/bcsrj5wxv2" width="100%" height="500px" frameborder=0 class="image"></iframe>
+							</div>
+
+							<hr>
+
+							<div>
+								<img src="/images/mathimg3.png" alt="Math Activity" class="image" id="math1">
+								<h2>Answers</h2>
+								<ol>
+								<li>
+									I do not agree with Susan’s indication.
+								</li>
+								<li>
+									Susan did not properly follow the proper way and format on how to write ordered pairs which is: (x, y); The x value of point A is 4, and the y value is 2, this means that the correct format is (4, 2) and not (2, 4).
+								</li>
+								<li>
+									The correct answer is (4, 2). This is a very common mistake that everyone makes, most people including me as well, tend to swap the x and y values around when writing ordered pairs, we should always be mindful of how we write ordered pairs.
+								</li>
+								</ol>
+									Angelo’s mistake is very similar to the mistake Susan made, he swapped the coordinates around. The correct coordinates are:
+									<ul>
+										<li>B: (0, 4)</li>
+										<li>D: (-4, 0)</li>
+									</ul>
+							</div>
+							
+							<hr>
+
+							<div>
+								<img src="./images/mathimg4.png" alt="Level 1" class="image">
+								<h2>Answers</h2>
+								<ol>
+									<li>1 minute = 5 <br>
+										2 minutes= 5 <br>
+										3 minutes = 5 <br>
+										4 minutes = 7 <br>
+										5 minutes = 9
+									</li><br>
+									<li>
+										(1, 5) <br>
+										(2, 5) <br>
+										(3, 5) <br>
+										(4, 7) <br>
+										(5, 9)
+									</li><br>
+									<li>
+										The domain is the time spent on the call, and the range is the charge of the pay phone call.
+									</li><br>
+									<li>
+										The more time you spent on the call, the higher the charge becomes.
+									</li>
+								</ol>
+							</div>
+	
+							<hr>
+
+							<div>
+								<img src="./images/mathimg5.png" alt="Level 2" class="image">
+							</div>
+
+							<hr>
+
+							<div>
+								<div class="flex-container">
+								<div class="flex-child">
+									<img src="./images/mathimg6.png" alt="Level 2" class="image"><br><br>
+									<ol>
+										<li>
+											<b>Set of ordered pairs</b>
+											<ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+												<li style="margin-left:0.5em">
+													Domain={0, 1, 2, 3, 4}, Range={2, 3, 4, 5, 6}
+												</li>
+												<li style="margin-left:0.5em">
+													Domain={0}, Range={2, 4, 6, 8, 10}
+												</li>
+											</ol>
+										</li>
+										<li>
+											<b>Mapping Diagram</b>
+											<ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+												<li style="margin-left:0.5em">
+													Domain={-2, 0, 2}, Range={-5, 10, -1, 8, 9}
+												</li>
+												<li style="margin-left:0.5em">
+													Domain={-2, 0, 1, 2}, Range={-5, 0, -1, 6}
+												</li>
+											</ol>
+										</li>
+									</ol>
+								</div>
+								<div class="flex-child">
+									<img src="./images/mathimg7.png" alt="Level 2" class="image"><br><br>
+									<ol>
+										<li>
+											<b>Domain</b> = {-1, 0, 1, 2, 3},<br> <b>Range</b> = {3, 6, 9, 12, 15}
+										</li><br>
+										<li>
+											<b>Domain</b> = {-2, -1, 0},<br> <b>Range</b> = {5, -5, 3, -3, -1}
+										</li>
+									</ol>
+								</div>
+								</div>
+								<div>
+								<img src="./images/mathimg11.png" alt="level 2 also" class="image" id="#mathimg8">
+								<h2>Answers</h2>
+								<ol>
+									<li>
+										<b>Domain</b> = {-1, 0, 1, 2, 3},<br> <b>Range</b> = {3, 6, 9, 12, 15}
+									</li>
+									<li>
+										<b>Domain</b> = {-2, -1, 0},<br> <b>Range</b> = {5, -5, 3, -3, -1}
+									</li>
+								</ol>
+								</div>
+							</div>
+
+							<hr>
+
+							<div>
+								<img src="./images/mathimg8.png" alt="Guide Questions" class="image">
+								<h2>Answers</h2>
+								<ol>
+									<li>
+										A function is an expression, rule, or law that defines a relationship between one variable (the independent variable) and another variable (the dependent variable). A ‘function’ must pass the vertical line test to be considered a function.
+									</li>
+									<li>
+										Functions contain a set of independent domain values and a set of dependent range values.
+									</li>
+									<li>
+										The domain is the independent variable in a function, it doesn’t change in a result of another variable’s change, in a graph this is typically represented by the x-axis, while the range is the dependent variable which is affected by the domain, it is represented by the y-axis in a graph.
+									</li>
+									<li>
+										You can determine a function if it’s highest degree is 1, or you can use the vertical line test to check whether all x values correspond to only one y-value, and not two.
+									</li>
+									<li>
+										The vertical line test checks whether the highest degree of a graphed relation is equal to 1. If you can draw any vertical line that intersects more than one point on the relationship, then it is not a function.
+									</li>
+									<li>
+										The expression "f (x)" means "a formula, named f, has x as its input variable". It does not mean "multiply f and x".
+									</li>
+								</ol>
+							</div>
+
+							<hr>
+
+							<div>
+								<img src="./images/mathimg9.png" alt="Practice 1" class="image">
+								<h2>Answers</h2>
+								<ol>
+									<li>
+										<b>Domain</b> = -∞, +∞<br>
+										<b>Range</b> = y ≥ 0
+									</li><br>
+									<li>
+										<b>Domain</b> = {x | x ∈ ℝ}<br>
+										<b>Range</b> = 5
+									</li><br>
+									<li>
+										<b>Domain</b> = {x | x ∈ ℝ}<br>
+										<b>Range</b> = {y | y ∈ ℝ}
+									</li>
+								</ol>
+								<img src="./images/mathimg10.png" alt="Practice2" class="image">
+								<h2>Answers</h2>
+								<ol>
+									<li>
+										<b>Domain</b> = (-∞, ∞)<br>
+									</li><br>
+									<li>
+										<b>Domain</b> = (-∞, ∞)<br>
+									</li><br>
+									<li>
+										<b>Domain</b> = x ≥ 0<br>
+									</li><br>
+									<li>
+										<b>Domain</b> = x ≥ -1<br>
+									</li><br>
+									<li>
+										<b>Domain</b> = x ≠ 2<br>
+									</li>
+								</ol>
+							</div>
+
+							<hr>
+
+							<div>
+								<img src="./images/mathimg12.png" alt="Word Problem">
+							</div>
+
+							<hr>
+
+							<div>
+								<img src="./images/mathimg13.png" alt="Instructions" class="image"><br>
+								<a href="https://docs.google.com/document/d/178Qzo2DuR9_vfZUK1pptSVMfV5cPwGGpCe1DX1NGgOc/edit?usp=sharing">
+									Click here to view the original output.
+								</a>
+								<h2>Answers</h2>
+								<ol>
+									<li>
+										y = −3x − 2
+										<ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+											<li style="margin-left:0.5em">
+												This function is already in slope-intercept form and does not require any simplifications. 
+											</li>
+										</ol>
+										<div style="text-align: center;">
+											<img src="./images/mimg1.png" alt="Graphed image" class="mimg image">
+										</div>
+									</li><br>
+									<li>
+										2x + 3y = 0
+										<ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+											<li style="margin-left:0.5em">
+												This function is in standard form, this means we can use the axis-intercepts to graph a line, or we could solve it to make it into a slope intercept form: 
+												<ol style="list-style-type: lower-roman; padding-bottom: 0;">
+													<li style="margin-left: 1em;">
+														For this equation we need to separate y, to follow the y=mx+b format:
+														<div class="tab">
+															2x - 2x + 3y = 0 - 2x (subtract both sides by -2x)
+															<br>
+															= 3y = -2x
+
+															<br><br>
+
+															3y/3 = 2x/3 (divide both sides by 3)<br>
+															= y = 2/3x
+														</div>
+													</li>
+													<li style="margin-left: 1em;">
+														Now that we have solved for the slope intercept form, we can graph it!
+													</li>
+												</ol>
+											</li>
+										</ol> 
+										<div style="text-align: center;">
+											<img src="./images/mimg2.png" alt="Graphed image" class="mimg image">
+										</div>
+									</li><br>
+									<li>
+										4x − y = 5
+										<ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+											<li style="margin-left:0.5em">
+												Like the previous function, this is also in standard form, so we need to solve for its slope-intercept form:
+												<ol style="list-style-type: lower-roman; padding-bottom: 0;">
+													<li style="margin-left: 1em;">
+														For this equation we need to put the slope on the right side of the equation and correct operations:
+														<div class="tab">
+															4x - 4x - y = 5 - 4x (subtract both sides by 4x)
+															<br>
+															= -(1)y = -4x + 5
+
+															<br><br>
+
+															-(1)y/-1 = -4x/-1 + 5/-1 (divide both sides by -1 to correct the operations)<br>
+															= y = 4x - 5
+														</div>
+													</li>
+													<li style="margin-left: 1em;">
+														Now that we have solved for the slope intercept form, we can graph it!
+													</li>
+												</ol>
+											</li>
+										</ol> 
+										<div style="text-align: center;">
+											<img src="./images/mimg3.png" alt="Graphed image" class="mimg image">
+										</div>
+									</li><br>
+									<li>
+										y - 3 = <sup>1</sup>&frasl;<sub>4</sub>x
+										<ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+											<li style="margin-left:0.5em">
+												This one needs a bit more reformatting to be in the slope-intercept form y = mx+b.
+												<ol style="list-style-type: lower-roman; padding-bottom: 0;">
+													<li style="margin-left: 1em;">
+														For this equation we need to move -3 to the other side, we can do this by adding 3 to both sides:
+														<div class="tab">
+															y - 3 + 3 = <sup>1</sup>&frasl;<sub>4</sub>x + 3
+
+															<br><br>
+
+															y = <sup>1</sup>&frasl;<sub>4</sub>x + 3
+														</div>
+													</li>
+													<li style="margin-left: 1em;">
+														Now we can graph the function!
+													</li>
+												</ol>
+											</li>
+										</ol>
+										<div style="text-align: center;">
+											<img src="./images/mimg4.png" alt="Graphed image" class="mimg image">
+										</div>
+									</li><br>
+									<li>
+										5x + 2 = y
+										<ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+											<li style="margin-left:0.5em">
+												This equation is already in slope-intercept form so we don’t have to do any changes:
+											</li>
+										</ol>
+										<div style="text-align: center;">
+											<img src="./images/mimg5.png" alt="Graphed image" class="mimg image">
+										</div>
+									</li><br>
+									<li>
+										-2x + 3y = 12
+										<ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+											<li style="margin-left:0.5em">
+												This equation is in standard form so we need to solve to turn it into its slope intercept form.
+												<ol style="list-style-type: lower-roman; padding-bottom: 0;">
+													<li style="margin-left: 1em;">
+														For this equation we need to isolate y:
+														<div class="tab">
+															-2x + 2x + 3y = 12 + 2x
+															<br>
+															= 3y = 2x + 12
+
+															<br><br>
+
+															3y/3 = 2x/3 + 12/3<br>
+															= y = 2/3x + 4
+														</div>
+													</li>
+													<li style="margin-left: 1em;">
+														Now we can graph the function:
+													</li>
+												</ol>
+											</li>
+										</ol> 
+										<div style="text-align: center;">
+											<img src="./images/mimg6.png" alt="Graphed image" class="mimg image">
+										</div>
+									</li><br>
+									<li>
+										y = 2x − 1
+										<ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+											<li style="margin-left:0.5em">
+												This function is already in slope-intercept form so we can easily graph it:
+											</li>
+										</ol>
+										<div style="text-align: center;">
+											<img src="./images/mimg7.png" alt="Graphed image" class="mimg image">
+										</div>
+									</li>
+								</ol>
+							</div>
+
+							<hr>
+
+							<div>
+								<div class="centerimg">
+									<img src="./images/ml1.png" alt="Level 1" class="image">
+								</div>
+								<br>
+								<div class="centerimg">
+									<img src="./images/ml2.png" alt="Level 2" class="image">
+								</div>
+								<br>
+								<div class="centerimg">
+									<img src="./images/ml3.png" alt="Level 3" class="image">
+								</div>
+							</div>
+
+							<hr>
+
+							<div>
+								<h2>Question and Answer</h2>
+								<p>
+									When digging into the earth the temperature rises according to the following linear equation: <b>t = 15+ 0.01h</b>, where <b>t</b> is the increase in degrees, and <b>h</b> is the depth in meters.
+								</p>
+								<h3>Calculate:</h3>
+								<ul>
+									<li>
+										What will the temperature be at 100m depth?<br>
+										<b>16 Degrees Celsius</b>
+									</li>
+									<li>
+										Based on the equation, at what depth would there be a temperature of 100C?
+										<br>
+										<b>8500m</b>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSrJ6JcVl_VYB1sSLiKWPkTRv4VT4jRQiZfhm731ny14LeZ2kf2ysgpkmP6m2G5c1UxlBv8UJoZzsQ3/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" class="ggs"></iframe>
+				</div>
+			</div>
+
+			<div id="ar-wrapper" style="display: none;">
+				<!-- section title -->
+				<h2 class="section-title wow fadeInUp" id="ar">Arabic</h2>
+
+				<div class="spacer" data-height="30"></div>
+
+				<!-- contents wrapper -->
+				<div class="content-wrapper">
+				
+					<!-- content item -->
+					<div class="c-i">
+						<div class="text">
+							<div>
+								<h2>أكتب جملة عن اهمية التسامح </h2>
+								<div class="centerimg">
+									<img src="./images/ar1.png" alt="Writing on a Notebook" class="mimg image">
+									<br>
+									<p style="font-size: 30px;">
+										.انا احب التسامح
+									</p>
+								</div>
+							</div>
+							<div class="centerimg">
+								<img src="./images/ar2.png" alt="Arabic Question 1" class="image">
+							</div><br><br>
+							<div class="centerimg">
+								<img src="./images/ar3.png" alt="Arabic Question 1" class="image">
+							</div><br><br>
+							<div class="centerimg">
+								<img src="./images/ar4.png" alt="Arabic Question 1" class="image">
+							</div>
+
+							<hr>
+
+							<div>
+								<div class="centerimg">
+									<img src="./images/ar5.png" alt="Arabic Question 1" class="image">
+								</div><br><br>
+								<div class="centerimg">
+									<img src="./images/ar6.png" alt="Arabic Question 1" class="image">
+								</div><br><br>
+								<div class="centerimg">
+									<img src="./images/ar7.png" alt="Arabic Question 1" class="image">
+								</div><br><br>
+								<div class="centerimg">
+									<img src="./images/ar8.png" alt="Arabic Question 1" class="image">
+								</div><br><br>
+								<div class="centerimg">
+									<img src="./images/ar9.png" alt="Arabic Question 1" class="image">
+								</div><br><br>
+								<div class="centerimg">
+									<img src="./images/ar10.png" alt="Arabic Question 1" class="image">
+								</div><br><br>
+								<div class="centerimg">
+									<img src="./images/ar11.png" alt="Arabic Question 1" class="image">
+								</div>
+							</div>
+
+							<hr>
+
+							<div>
+								<div class="centerimg">
+									<img src="./images/ar12.png" alt="Arabic Question 1" class="image">
+								</div><br><br>
+								<div class="centerimg">
+									<img src="./images/ar13.png" alt="Arabic Question 1" class="image">
+								</div><br><br>
+								<div class="centerimg">
+									<img src="./images/ar14.png" alt="Arabic Question 1" class="image">
+								</div><br><br>
+								<div class="centerimg">
+									<img src="./images/ar15.png" alt="Arabic Question 1" class="image">
+								</div><br><br>
+								<div class="centerimg">
+									<img src="./images/ar16.png" alt="Arabic Question 1" class="image">
+								</div>
+							</div>
+
+							<hr>
+
+							<div>
+								<div class="glcon" style="text-align: center;">
+									<a href="#gallery-5" class="gallery-link">
+										<b>
+											Click here to see the gallery of all outputs in the Arabic Subject.
+										</b>
+									</a>
+									<div id="gallery-5" class="gallery mfp-hide">
+										<a href="./images/ar1.png"></a>
+										<a href="./images/ar2.png"></a>
+										<a href="./images/ar3.png"></a>
+										<a href="./images/ar4.png"></a>
+										<a href="./images/ar5.png"></a>
+										<a href="./images/ar6.png"></a>
+										<a href="./images/ar7.png"></a>
+										<a href="./images/ar8.png"></a>
+										<a href="./images/ar9.png"></a>
+										<a href="./images/ar10.png"></a>
+										<a href="./images/ar11.png"></a>
+										<a href="./images/ar12.png"></a>
+										<a href="./images/ar13.png"></a>
+										<a href="./images/ar14.png"></a>
+										<a href="./images/ar15.png"></a>
+										<a href="./images/ar16.png"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="tle-wrapper" style="display: none;">
+				<!-- section title -->
+				<h2 class="section-title wow fadeInUp" id="tle">Technology & Livelihood Education</h2>
+
+				<div class="spacer" data-height="30"></div>
+
+				<!-- contents wrapper -->
+				<div class="content-wrapper">
+				
+					<!-- content item -->
+					<div class="c-i">
+						<div class="text">
+							<h2>5s, PPE and First Aid Rules</h2>
+							<h3>5s</h3>
+							<ol>
+								<li>
+									<b>Sort/Seiri</b>
+									<br>
+									Take out unnecessary items and dispose. Keep only the items you need at work, and discard or store everything else.
+								</li><br>
+								<li>
+									<b>Systematize/Seiton</b>
+									<br>
+									It means that there is a place for everything and everything should be in its place. Arrange necessary items in good order for use.
+								</li><br>
+								<li>
+									<b>Shine/Seiso</b>
+									<br>
+									At the end of each working day, take time to clean up your office or working space. Keep the workplace neat and clean.
+								</li><br>
+								<li>
+									<b>Standardize/Seiketsu</b>
+									<br>
+									Maintain high standard of cleaning and workshop organization at all times.
+								</li><br>
+								<li>
+									<b>Sustain/Shitsuke</b>
+									<br>
+									Do things spontaneously without being told or ordered. Self-discipline is a condition of training people to follow cleaning disciplines independently. 
+								</li>
+							</ol>
+							<h3>Personal Protective Equipment and Clothing (PPE)</h3>
+							<p>
+								PPE can protect you from hazards associated with jobs such as handling chemicals or working in a noisy environment. In food preparation this is the cooking outfit which gives protection to the worker against different hazards that may be encountered during cooking.
+								<br><br>
+								<b>These are the following</b>
+								<ul style="margin-left: 1em;">
+									<li>
+										<b>Hair covering/ hairnet</b> – prevents hair from falling into food product.
+									</li>
+									<li>
+										<b>Facial mask</b> – barrier to airborne contamination during sneezing, coughing and talking.
+									</li>
+									<li>
+										<b>Aprons</b> – reduce risk of contamination and help maintain cleanliness.
+									</li>
+									<li>
+										<b>Gloves</b> – reduce risks of contamination.
+									</li>
+									<li>
+										<b>Pot holder</b> – protects against burns when taking hot items on top of the stove.
+									</li>
+								</ul>
+							</p>
+							<h3>First Aid Rules</h3>
+							<b>Burns</b> - Cool the burn with cool water. Do not put grease, or oil on burn – they can make it worse.
+							Do not try to clean a burn or break blisters. Call a physician. <br><br>
+
+							<b>Falls</b> - Stop severe bleeding. Cover wounds with sterile dressing. Keep the person comfortable and warm. If you think the bone is broken, do not move the person unless necessary as in the event of fire, call for a medical assistance. <br><br>
+
+							<b>Poisoning</b> - Swallowed Poison. If the container is available, use antidote recommended in the label. If none is given call the emergency station of a hospital, the nearest clinic, or rural health center. Tell them what kind of poison was taken and they will recommend an antidote. Do not try to neutralize a poison by giving raw eggs, salt water, mustard, vinegar or citrus fruit juices as an antidote or to cause vomiting. Never attempt to induce vomiting by sticking your fingers anywhere in the patient's mouth; this procedure can be very dangerous.
+
+							<hr>
+							<h2>Replicating Commercially Baked Bread</h2>
+							<div class="video">
+								<div class="video center" style="width: 40%; text-align: center !important;">
+									<video class="videos" playsinline controls style="border-radius: 20px;">
+										<source src="./media/tle1.mp4" type="video/mp4"/>
+									  </video>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</section>
+	
+	<!-- section quotes -->
+	<section id="testimonials">
+
+		<div class="container">
+			
+			<!-- section title -->
+			<h2 class="section-title wow fadeInUp">Inspirational Quotes</h2>
+			<div class="spacer" data-height="60"></div>
+			
+
+        </div>
+            
+			<!-- testimonials wrapper -->	
+			<div class="testimonials-wrapper">
+				
+				<!-- testimonial item -->
+				<div class="testimonial-item text-center mx-auto">
+					<h4 class="mt-3 mb-0">Coco Chanel</h4>
+					<span class="subtitle">French fashion designer</span>
+					<div class="bg-white padding-30 shadow-dark rounded triangle-top position-relative mt-4">
+						<p class="mb-0">Success is most often achieved by those who don't know that failure is inevitable.</p>
+					</div>
+				</div>
+				
+				<!-- testimonial item -->
+				<div class="testimonial-item text-center mx-auto">
+					<h4 class="mt-3 mb-0">Jonah Lehrer</h4>
+					<span class="subtitle">American Author</span>
+					<div class="bg-white padding-30 shadow-dark rounded triangle-top position-relative mt-4">
+						<p class="mb-0">Every brilliant experiment, like every great work of art, starts with an act of imagination.</p>
+					</div>
+				</div>
+
+			</div>
+        
+
+	</section>
+	
+	<!-- section double scroll bar prevention -->
+	<section id="dsbp"></section>
+	
+</main>
+
+<!-- Go to top button -->
+<a href="javascript:" id="return-to-top"><i class="fas fa-arrow-up"></i></a>
+
+<!-- SCRIPTS -->
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/infinite-scroll.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/validator.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/morphext.min.js"></script>
+<script src="js/parallax.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/custom.js"></script>
+<script src="https://cdn.plyr.io/3.6.3/plyr.js"></script>
+<script>
+const players = Array.from(document.querySelectorAll('.videos')).map(p => new Plyr(p));
+</script>
+</body>
+
+</html>
