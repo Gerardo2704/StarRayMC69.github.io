@@ -2878,55 +2878,55 @@ body {
     filter: grayscale(1);
 }
 .con-sl .slider .slide.slide1 {
-    background-image: url(/images/bn/ap.png);
+    background-image: url(../images/bn/ap.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 .con-sl .slider .slide.slide2 {
-    background-image: url(/images/bn/english.jpg);
+    background-image: url(../images/bn/english.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 .con-sl .slider .slide.slide3 {
-    background-image: url(/images/bn/fil.png);
+    background-image: url(../images/bn/fil.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 .con-sl .slider .slide.slide4 {
-    background-image: url(/images/bn/mec.jpg);
+    background-image: url(../images/bn/mec.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 .con-sl .slider .slide.slide5 {
-    background-image: url(/images/bn/mapeh.jpg);
+    background-image: url(../images/bn/mapeh.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 .con-sl .slider .slide.slide6 {
-    background-image: url(/images/bn/science.png);
+    background-image: url(../images/bn/science.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 .con-sl .slider .slide.slide7 {
-    background-image: url(/images/bn/math.png);
+    background-image: url(../images/bn/math.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 .con-sl .slider .slide.slide8 {
-    background-image: url(/images/bn/ar.jpg);
+    background-image: url(../images/bn/ar.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 .con-sl .slider .slide.slide9 {
-    background-image: url(/images/bn/tle.jpg);
+    background-image: url(../images/bn/tle.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
